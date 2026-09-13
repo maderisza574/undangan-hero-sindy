@@ -2,14 +2,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #0a111c;
-  --bg-secondary: #111d2e;
-  --bg-card: rgba(17, 29, 46, 0.85);
-  --bg-card-hover: rgba(23, 39, 61, 0.9);
-  --text-primary: #ffffff;
-  --text-muted: #94a3b8;
-  --accent-blue: #38bdf8;
-  --gold-main: #e2e8f0;
+  --bg-primary: #1c1512;
+  --bg-secondary: #281e19;
+  --bg-card: rgba(40, 30, 25, 0.88);
+  --bg-card-hover: rgba(54, 41, 34, 0.95);
+  --text-primary: #fdfbf7;
+  --text-muted: #d4c3b5;
+  --gold-light: #f7e7ce;
+  --gold-main: #d4a373;
+  --gold-dark: #a97142;
+  --gold-gradient: linear-gradient(135deg, #f7e7ce 0%, #d4a373 50%, #a97142 100%);
+  --border-gold: rgba(212, 163, 115, 0.35);
   --font-serif: 'Playfair Display', serif;
   --font-cursive: 'Great Vibes', 'Alex Brush', cursive;
   --font-title: 'Cinzel', serif;
@@ -26,21 +29,24 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: #04070d;
+  background-color: #120d0a;
   color: var(--text-primary);
   font-family: var(--font-sans);
   overflow-x: hidden;
   line-height: 1.6;
 }
 
-/* Container for Mobile Viewport centered on larger screens */
+/* Container for Mobile Viewport centered on larger screens (100% Mobile Responsive) */
 .app-container {
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: #04070d;
+  background-color: #0e0a08;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 163, 115, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(169, 113, 66, 0.15) 0%, transparent 40%);
 }
 
 .mobile-wrapper {
@@ -49,39 +55,44 @@ html, body {
   min-height: 100vh;
   background-color: var(--bg-primary);
   position: relative;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(212, 163, 115, 0.2);
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid rgba(212, 163, 115, 0.2);
+  border-right: 1px solid rgba(212, 163, 115, 0.2);
 }
 
 /* Arch Shaped Frames (matching Shopee Video reference) */
 .arch-frame {
   border-top-left-radius: 120px;
   border-top-right-radius: 120px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(212, 163, 115, 0.4);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
   position: relative;
 }
 
-/* Glassmorphism Cards with Arch Accents */
+/* Glassmorphism Cards with Coklat/Cream Accents */
 .glass-card {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border-gold);
   border-radius: 24px;
   padding: 24px 20px;
   margin-bottom: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* Cursive Typography overlay */
+.glass-card:hover {
+  border-color: rgba(212, 163, 115, 0.6);
+}
+
+/* Typography styles */
 .font-cursive {
   font-family: var(--font-cursive);
 }
@@ -95,34 +106,45 @@ html, body {
   letter-spacing: 2px;
 }
 
-/* Buttons matching video reference */
+.text-gold {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-cream {
+  color: var(--gold-light);
+}
+
+/* Buttons matching video reference with Coklat / Cream Theme */
 .btn-white-pill {
-  background-color: #ffffff;
-  color: #0f172a;
-  font-weight: 600;
+  background-color: #fdfbf7;
+  color: #281e19;
+  font-weight: 700;
   border: none;
   border-radius: 50px;
-  padding: 12px 28px;
+  padding: 13px 28px;
   font-size: 0.95rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
   width: 100%;
 }
 
 .btn-white-pill:hover, .btn-white-pill:active {
   transform: translateY(-2px);
-  background-color: #f8fafc;
-  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.2);
+  background-color: #ffffff;
+  box-shadow: 0 14px 30px rgba(212, 163, 115, 0.3);
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-  color: #0f172a;
+  background: var(--gold-gradient);
+  color: #1c1512;
   font-weight: 700;
   border: none;
   border-radius: 50px;
@@ -133,16 +155,21 @@ html, body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(212, 163, 115, 0.3);
   transition: all 0.3s ease;
   width: 100%;
 }
 
+.btn-gold:hover, .btn-gold:active {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
 .btn-outline-gold {
   background: transparent;
-  color: #ffffff;
+  color: var(--gold-light);
   font-weight: 600;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border: 1.5px solid var(--gold-main);
   border-radius: 50px;
   padding: 12px 24px;
   font-size: 0.9rem;
@@ -155,8 +182,8 @@ html, body {
 }
 
 .btn-outline-gold:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #ffffff;
+  background: rgba(212, 163, 115, 0.15);
+  border-color: var(--gold-light);
 }
 
 /* Animations */
@@ -183,9 +210,9 @@ html, body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a111c;
+  background: #120d0a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #a97142;
   border-radius: 10px;
 }
