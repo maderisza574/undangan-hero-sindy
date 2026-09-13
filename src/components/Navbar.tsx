@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Calendar, Image as ImageIcon, MessageSquare, Gift, ShieldAlert, Music, Music2 } from 'lucide-react';
+import { Heart, Calendar, MessageSquare, Gift, ShieldAlert, Music, Music2 } from 'lucide-react';
 
 interface NavbarProps {
   activeSection: string;
@@ -17,7 +17,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navItems = [
     { id: 'mempelai', label: 'Mempelai', icon: Heart },
     { id: 'acara', label: 'Acara', icon: Calendar },
-    { id: 'galeri', label: 'Galeri', icon: ImageIcon },
     { id: 'rsvp', label: 'RSVP', icon: MessageSquare },
     { id: 'gift', label: 'Hadiah', icon: Gift },
   ];

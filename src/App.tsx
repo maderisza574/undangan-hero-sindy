@@ -4,7 +4,6 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { CoupleSection } from './components/CoupleSection';
 import { EventSection } from './components/EventSection';
-import { GallerySection } from './components/GallerySection';
 import { DigitalGiftSection } from './components/DigitalGiftSection';
 import { RsvpSection } from './components/RsvpSection';
 import { AdminPage } from './pages/AdminPage';
@@ -43,7 +42,6 @@ export function App() {
   // Handle Opening Invitation Cover
   const handleOpenInvitation = () => {
     setIsCoverOpen(true);
-    // Play audio music upon explicit user click
     if (audioRef.current) {
       audioRef.current.play().then(() => {
         setIsPlayingMusic(true);
@@ -104,13 +102,12 @@ export function App() {
               <HeroSection />
               <CoupleSection />
               <EventSection />
-              <GallerySection />
               <DigitalGiftSection />
               <RsvpSection defaultGuestName={guestName} />
             </main>
 
             {/* Footer */}
-            <footer className="text-center py-6 px-4 border-t border-[rgba(223,179,85,0.2)] bg-[#07120d] text-[#b8c4bc] text-xs space-y-2 mb-16">
+            <footer className="text-center py-6 px-4 border-t border-[rgba(212,163,115,0.2)] bg-[#1c1512] text-[#d4c3b5] text-xs space-y-2 mb-16">
               <p className="font-serif font-bold text-gold text-sm">
                 Hero Saksono &amp; Sindy Ayunda Putri
               </p>
