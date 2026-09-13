@@ -1,4 +1,6 @@
 import { Heart, Camera } from 'lucide-react';
+import groom3dImg from '../assets/3d_groom.jpg';
+import bride3dImg from '../assets/3d_bride.jpg';
 
 export const CoupleSection = () => {
   return (
@@ -19,10 +21,12 @@ export const CoupleSection = () => {
 
       {/* Groom Card: Hero Saksono */}
       <div className="glass-card ornament-frame mb-8">
-        <div className="w-24 h-24 mx-auto rounded-full p-1 bg-gradient-to-tr from-[#dfb355] to-transparent mb-4">
-          <div className="w-full h-full rounded-full bg-[#16261e] border-2 border-[#dfb355] flex items-center justify-center font-serif text-2xl text-[#f9eaaf] font-bold shadow-lg">
-            HS
-          </div>
+        <div className="w-28 h-28 mx-auto rounded-full p-1 bg-gradient-to-tr from-[#dfb355] to-transparent mb-4 shadow-xl">
+          <img
+            src={groom3dImg}
+            alt="Hero Saksono 3D Avatar"
+            className="w-full h-full rounded-full object-cover border-2 border-[#dfb355]"
+          />
         </div>
 
         <h3 className="text-2xl font-serif font-bold text-[#f9eaaf] mb-1">
@@ -63,10 +67,12 @@ export const CoupleSection = () => {
 
       {/* Bride Card: Sindy Ayunda Putri */}
       <div className="glass-card ornament-frame">
-        <div className="w-24 h-24 mx-auto rounded-full p-1 bg-gradient-to-tr from-[#dfb355] to-transparent mb-4">
-          <div className="w-full h-full rounded-full bg-[#16261e] border-2 border-[#dfb355] flex items-center justify-center font-serif text-2xl text-[#f9eaaf] font-bold shadow-lg">
-            SAP
-          </div>
+        <div className="w-28 h-28 mx-auto rounded-full p-1 bg-gradient-to-tr from-[#dfb355] to-transparent mb-4 shadow-xl">
+          <img
+            src={bride3dImg}
+            alt="Sindy Ayunda Putri 3D Avatar"
+            className="w-full h-full rounded-full object-cover border-2 border-[#dfb355]"
+          />
         </div>
 
         <h3 className="text-2xl font-serif font-bold text-[#f9eaaf] mb-1">
