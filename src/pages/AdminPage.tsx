@@ -18,6 +18,22 @@ import {
 import type { Guest } from '../types';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
+const DEFAULT_TEMPLATE = `Assalamualaikum Warahmatullahi Wabarakatuh
+
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i {NAMA_TAMU} untuk menghadiri acara kami.
+
+Berikut link undangan kami, untuk info lengkap dari acara bisa kunjungi :
+
+{LINK_UNDANGAN}
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+
+*Mohon maaf perihal undangan hanya di bagikan melalui pesan ini.
+
+Terima kasih banyak atas perhatiannya.
+
+Wassalamualaikum Warahmatullahi Wabarakatuh`;
+
 export const AdminPage: React.FC = () => {
   const [guestName, setGuestName] = useState('');
   const [guestPhone, setGuestPhone] = useState('');
@@ -27,9 +43,7 @@ export const AdminPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'create' | 'list' | 'template'>('create');
 
   // Custom WA Template State
-  const [waTemplate, setWaTemplate] = useState<string>(
-    `Assalamu'alaikum Wr. Wb.\n\nKepada Yth. {NAMA_TAMU}\n\nTanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami:\n\nHero Saksono & Sindy Ayunda Putri\n\nSabtu & Minggu, 26-27 September 2026\n\nBerikut link undangan digital kami:\n{LINK_UNDANGAN}\n\nMerupakan suatu kehormatan & kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.\n\nWassalamu'alaikum Wr. Wb.`
-  );
+  const [waTemplate, setWaTemplate] = useState<string>(DEFAULT_TEMPLATE);
 
   useEffect(() => {
     const fetchGuests = async () => {
@@ -65,18 +79,18 @@ export const AdminPage: React.FC = () => {
         const sampleGuests: Guest[] = [
           {
             id: '1',
-            name: 'Bapak Ahmad & Keluarga',
+            name: 'Desphi',
             phone: '08123456789',
             status: 'pending',
-            generatedUrl: `${window.location.origin}/?to=${encodeURIComponent('Bapak Ahmad & Keluarga')}`,
+            generatedUrl: `${window.location.origin}/?to=${encodeURIComponent('Desphi')}`,
             createdAt: new Date().toISOString().slice(0, 10)
           },
           {
             id: '2',
-            name: 'Sahabat SMA',
+            name: 'Bapak Ahmad & Keluarga',
             phone: '',
             status: 'sent',
-            generatedUrl: `${window.location.origin}/?to=${encodeURIComponent('Sahabat SMA')}`,
+            generatedUrl: `${window.location.origin}/?to=${encodeURIComponent('Bapak Ahmad & Keluarga')}`,
             createdAt: new Date().toISOString().slice(0, 10)
           }
         ];
@@ -309,7 +323,7 @@ export const AdminPage: React.FC = () => {
                   required
                   value={guestName}
                   onChange={(e) => setGuestName(e.target.value)}
-                  placeholder="Contoh: Bapak Ahmad &amp; Keluarga / Sahabat Sindy"
+                  placeholder="Contoh: Desphi / Bapak Ahmad &amp; Keluarga"
                   className="w-full px-4 py-2.5 rounded-xl bg-[rgba(10,19,15,0.9)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] focus:outline-none focus:border-[#dfb355]"
                 />
                 <p className="text-[10px] text-[#b8c4bc] mt-1">
@@ -478,14 +492,20 @@ export const AdminPage: React.FC = () => {
             </p>
 
             <textarea
-              rows={10}
+              rows={12}
               value={waTemplate}
               onChange={(e) => handleSaveTemplate(e.target.value)}
               className="w-full px-4 py-3 rounded-xl bg-[rgba(10,19,15,0.9)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] font-sans leading-relaxed focus:outline-none focus:border-[#dfb355]"
             ></textarea>
 
-            <div className="mt-3 p-3 rounded-xl bg-[rgba(223,179,85,0.1)] border border-[rgba(223,179,85,0.2)] text-[11px] text-[#f9eaaf]">
-              <strong>Catatan:</strong> Perubahan template akan langsung tersimpan secara otomatis.
+            <div className="mt-3 flex items-center justify-between">
+              <button
+                onClick={() => handleSaveTemplate(DEFAULT_TEMPLATE)}
+                className="text-[11px] text-[#dfb355] hover:underline"
+              >
+                Reset ke Template Default Klien
+              </button>
+              <span className="text-[10px] text-[#b8c4bc]">Tersimpan Otomatis</span>
             </div>
           </div>
         )}
