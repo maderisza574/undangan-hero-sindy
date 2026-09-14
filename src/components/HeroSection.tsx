@@ -20,7 +20,7 @@ export const HeroSection = () => {
       <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent my-4"></div>
 
       {/* Arabic Quran Quote Card (Coklat/Cream theme) */}
-      <div className="glass-card mt-4 text-center text-xs leading-relaxed max-w-md w-full">
+      <div className="glass-card mt-6 mb-8 text-center text-xs leading-relaxed max-w-md w-full p-6 sm:p-7 shadow-xl">
         {/* Arabic Verse */}
         <p className="font-serif text-lg text-[#fdfbf7] mb-3 leading-loose tracking-wide">
           وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
