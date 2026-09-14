@@ -1,19 +1,37 @@
 import { useState } from 'react';
-import { Copy, Check, CreditCard } from 'lucide-react';
+import { Copy, Check, Wallet, Building2 } from 'lucide-react';
+import bniLogo from '../assets/bni_logo.png';
+import bcaLogo from '../assets/bca_logo.png';
+import ewalletLogo from '../assets/ewallet_logo.png';
 
 export const DigitalGiftSection = () => {
   const [copiedAccount, setCopiedAccount] = useState<string | null>(null);
 
-  const bankAccounts = [
+  const gifts = [
     {
-      bank: 'Bank BCA',
-      accountNumber: '8410293841',
-      accountHolder: 'HERO SAKSONO'
+      id: 'bni',
+      type: 'Bank BNI',
+      logo: bniLogo,
+      accountNumber: '2106320347',
+      accountHolder: 'Hero Saksono',
+      badge: 'Transfer BNI'
     },
     {
-      bank: 'Bank Mandiri',
-      accountNumber: '1420019283741',
-      accountHolder: 'SINDY AYUNDA PUTRI'
+      id: 'bca',
+      type: 'Bank BCA',
+      logo: bcaLogo,
+      accountNumber: '0462210840',
+      accountHolder: 'Sindy Ayunda Putri',
+      badge: 'Transfer BCA'
+    },
+    {
+      id: 'ewallet',
+      type: 'E-Wallet (DANA, OVO, ShopeePay, GoPay)',
+      logo: ewalletLogo,
+      accountNumber: '082136882616',
+      accountHolder: 'Sindy Ayunda Putri',
+      badge: 'E-Wallet',
+      tags: ['DANA', 'OVO', 'ShopeePay', 'GoPay']
     }
   ];
 
@@ -24,9 +42,9 @@ export const DigitalGiftSection = () => {
   };
 
   return (
-    <section id="gift" className="px-5 py-8 text-center scroll-mt-6 flex flex-col items-center justify-center">
+    <section id="gift" className="px-5 py-10 text-center scroll-mt-6 flex flex-col items-center justify-center">
       {/* Title */}
-      <div className="mb-6 w-full flex flex-col items-center justify-center">
+      <div className="mb-8 w-full flex flex-col items-center justify-center">
         <p className="text-xs font-serif text-[#d4c3b5] tracking-widest uppercase mb-1 text-center">
           Tanda Kasih
         </p>
@@ -35,51 +53,78 @@ export const DigitalGiftSection = () => {
         </h2>
         <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto my-3"></div>
         <p className="text-xs text-[#d4c3b5] max-w-xs mx-auto text-center leading-relaxed">
-          Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberi hadiah digital, dapat melalui:
+          Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberi hadiah digital, dapat melalui rekening berikut:
         </p>
       </div>
 
-      {/* Bank Account Cards */}
-      <div className="space-y-4 w-full flex flex-col items-center justify-center">
-        {bankAccounts.map((account, idx) => {
-          const isCopied = copiedAccount === account.accountNumber;
+      {/* Gift Cards */}
+      <div className="space-y-6 w-full flex flex-col items-center justify-center">
+        {gifts.map((item) => {
+          const isCopied = copiedAccount === item.accountNumber;
           return (
-            <div key={idx} className="glass-card w-full text-center relative overflow-hidden flex flex-col items-center justify-center">
-              <div className="flex items-center justify-center gap-2 border-b border-[rgba(212,163,115,0.2)] pb-3 mb-3 w-full">
-                <CreditCard className="w-5 h-5 text-[#d4a373]" />
-                <span className="font-serif font-bold text-lg text-[#f7e7ce]">
-                  {account.bank}
-                </span>
-                <span className="text-[10px] font-semibold text-[#d4a373] px-2 py-0.5 rounded bg-[rgba(212,163,115,0.15)] border border-[rgba(212,163,115,0.3)] ml-2">
-                  Transfer Bank
-                </span>
+            <div key={item.id} className="glass-card w-full text-center relative overflow-hidden flex flex-col items-center justify-center p-6 shadow-xl">
+              {/* Header with Logo */}
+              <div className="flex items-center justify-between border-b border-[rgba(212,163,115,0.25)] pb-4 mb-4 w-full">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 px-3 py-1 rounded-xl bg-white/90 flex items-center justify-center border border-[#d4a373]/30 shadow-sm">
+                    <img src={item.logo} alt={item.type} className="h-6 object-contain" />
+                  </div>
+                  <div className="text-left">
+                    <span className="font-serif font-bold text-base text-[#f7e7ce] block">
+                      {item.type}
+                    </span>
+                    <span className="text-[10px] font-semibold text-[#d4a373] tracking-wide uppercase">
+                      {item.badge}
+                    </span>
+                  </div>
+                </div>
+                {item.tags ? (
+                  <Wallet className="w-5 h-5 text-[#d4a373]" />
+                ) : (
+                  <Building2 className="w-5 h-5 text-[#d4a373]" />
+                )}
               </div>
 
-              <div className="space-y-1 text-xs mb-4 text-center">
-                <p className="text-[#d4c3b5]">Nomor Rekening:</p>
-                <p className="font-mono text-xl font-bold text-[#fdfbf7] tracking-wider">
-                  {account.accountNumber}
+              {/* Account Details */}
+              <div className="space-y-2 text-xs mb-5 text-center w-full">
+                <p className="text-[#d4c3b5] font-medium text-[11px]">
+                  {item.tags ? 'Nomor E-Wallet (DANA / OVO / ShopeePay / GoPay):' : 'Nomor Rekening:'}
+                </p>
+                <p className="font-mono text-2xl font-bold text-[#fdfbf7] tracking-wider py-1 bg-[rgba(20,15,12,0.6)] rounded-xl border border-[rgba(212,163,115,0.2)]">
+                  {item.accountNumber}
                 </p>
                 <p className="text-[#d4c3b5] pt-1">
-                  Atas Nama: <span className="text-[#f7e7ce] font-semibold">{account.accountHolder}</span>
+                  Atas Nama: <span className="text-[#f7e7ce] font-bold text-sm">{item.accountHolder}</span>
                 </p>
+
+                {/* E-wallet Tag Badges */}
+                {item.tags && (
+                  <div className="flex flex-wrap justify-center gap-1.5 pt-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="text-[10px] px-2.5 py-0.5 rounded-full bg-[#d4a373]/15 text-[#f7e7ce] border border-[#d4a373]/30 font-semibold">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
 
+              {/* Copy Button */}
               <button
-                onClick={() => handleCopy(account.accountNumber)}
-                className={`btn-outline-gold text-xs w-full py-2.5 transition-all flex items-center justify-center gap-2 ${
-                  isCopied ? 'bg-[#d4a373] text-[#1c1512] border-[#d4a373]' : ''
+                onClick={() => handleCopy(item.accountNumber)}
+                className={`btn-gold text-xs w-full py-3 transition-all flex items-center justify-center gap-2 ${
+                  isCopied ? 'bg-[#d4a373] text-[#1c1512]' : ''
                 }`}
               >
                 {isCopied ? (
                   <>
                     <Check className="w-4 h-4 text-[#1c1512]" />
-                    <span className="font-bold text-[#1c1512]">Nomor Rekening Berhasil Disalin!</span>
+                    <span className="font-bold text-[#1c1512]">Nomor Berhasil Disalin!</span>
                   </>
                 ) : (
                   <>
                     <Copy className="w-4 h-4" />
-                    <span>Salin Nomor Rekening</span>
+                    <span>Salin Nomor {item.tags ? 'E-Wallet' : 'Rekening'}</span>
                   </>
                 )}
               </button>
@@ -90,3 +135,4 @@ export const DigitalGiftSection = () => {
     </section>
   );
 };
+

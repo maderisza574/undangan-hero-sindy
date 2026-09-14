@@ -128,10 +128,10 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
       </div>
 
       {/* Form Card */}
-      <div className="glass-card text-left mb-8">
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="glass-card text-left mb-10 p-6 sm:p-7 shadow-2xl">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-xs font-semibold text-[#f9eaaf] mb-1">
+            <label className="block text-sm font-semibold text-[#f7e7ce] mb-2">
               Nama Lengkap
             </label>
             <input
@@ -140,19 +140,19 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Contoh: Bapak Supriadi &amp; Ibu"
-              className="w-full px-4 py-2.5 rounded-xl bg-[rgba(10,19,15,0.8)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] focus:outline-none focus:border-[#dfb355]"
+              className="w-full px-4 py-3.5 rounded-2xl bg-[rgba(15,10,8,0.85)] border border-[rgba(212,163,115,0.4)] text-sm text-[#fdfbf7] placeholder-[#d4c3b5]/50 focus:outline-none focus:border-[#d4a373] focus:ring-1 focus:ring-[#d4a373] transition-all"
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-[#f9eaaf] mb-1">
+              <label className="block text-sm font-semibold text-[#f7e7ce] mb-2">
                 Status Kehadiran
               </label>
               <select
                 value={attendance}
                 onChange={(e) => setAttendance(e.target.value as any)}
-                className="w-full px-3 py-2.5 rounded-xl bg-[rgba(10,19,15,0.8)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] focus:outline-none focus:border-[#dfb355]"
+                className="w-full px-4 py-3.5 rounded-2xl bg-[rgba(15,10,8,0.85)] border border-[rgba(212,163,115,0.4)] text-sm text-[#fdfbf7] focus:outline-none focus:border-[#d4a373] focus:ring-1 focus:ring-[#d4a373] transition-all"
               >
                 <option value="hadir">Ya, Saya Hadir</option>
                 <option value="ragu">Masih Ragu</option>
@@ -161,13 +161,13 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-[#f9eaaf] mb-1">
+              <label className="block text-sm font-semibold text-[#f7e7ce] mb-2">
                 Jumlah Tamu
               </label>
               <select
                 value={guestCount}
                 onChange={(e) => setGuestCount(Number(e.target.value))}
-                className="w-full px-3 py-2.5 rounded-xl bg-[rgba(10,19,15,0.8)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] focus:outline-none focus:border-[#dfb355]"
+                className="w-full px-4 py-3.5 rounded-2xl bg-[rgba(15,10,8,0.85)] border border-[rgba(212,163,115,0.4)] text-sm text-[#fdfbf7] focus:outline-none focus:border-[#d4a373] focus:ring-1 focus:ring-[#d4a373] transition-all"
               >
                 <option value={1}>1 Orang</option>
                 <option value={2}>2 Orang</option>
@@ -178,22 +178,22 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#f9eaaf] mb-1">
+            <label className="block text-sm font-semibold text-[#f7e7ce] mb-2">
               Pesan / Ucapan &amp; Doa Restu
             </label>
             <textarea
               required
-              rows={3}
+              rows={4}
               value={messageText}
               onChange={(e) => setMessageText(e.target.value)}
-              placeholder="Tuliskan ucapan dan doa terbaik Anda di sini..."
-              className="w-full px-4 py-2.5 rounded-xl bg-[rgba(10,19,15,0.8)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] focus:outline-none focus:border-[#dfb355] resize-none"
+              placeholder="Tuliskan ucapan dan doa terbaik Anda untuk kedua mempelai di sini..."
+              className="w-full px-4 py-3.5 rounded-2xl bg-[rgba(15,10,8,0.85)] border border-[rgba(212,163,115,0.4)] text-sm text-[#fdfbf7] placeholder-[#d4c3b5]/50 focus:outline-none focus:border-[#d4a373] focus:ring-1 focus:ring-[#d4a373] resize-none transition-all"
             ></textarea>
           </div>
 
           {submitSuccess && (
-            <div className="p-3 rounded-xl bg-[rgba(34,197,94,0.15)] border border-green-500 text-xs text-green-300 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-green-400 shrink-0" />
+            <div className="p-4 rounded-2xl bg-[rgba(34,197,94,0.15)] border border-green-500 text-sm text-green-300 flex items-center gap-2.5">
+              <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" />
               <span>Terima kasih! Konfirmasi kehadiran dan doa Anda telah terkirim.</span>
             </div>
           )}
@@ -201,7 +201,7 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="btn-gold text-xs w-full py-3"
+            className="btn-gold text-sm w-full py-4 shadow-xl"
           >
             {isSubmitting ? (
               <span>Mengirimkan Pesan...</span>
@@ -216,44 +216,44 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
       </div>
 
       {/* Live Wishes Feed */}
-      <div className="text-left space-y-3">
-        <p className="text-xs font-bold text-[#dfb355] tracking-wider uppercase mb-3 flex items-center gap-1.5">
+      <div className="text-left space-y-4">
+        <p className="text-sm font-bold text-[#d4a373] tracking-wider uppercase mb-3 flex items-center gap-2">
           <MessageSquare className="w-4 h-4" />
           <span>Ucapan Doa Restu ({messages.length})</span>
         </p>
 
-        <div className="space-y-3 max-h-[350px] overflow-y-auto pr-1">
+        <div className="space-y-4 max-h-[420px] overflow-y-auto pr-1">
           {messages.map((item) => (
-            <div key={item.id} className="p-3.5 rounded-xl bg-[rgba(22,38,30,0.6)] border border-[rgba(223,179,85,0.2)]">
-              <div className="flex items-center justify-between mb-1.5">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-[rgba(223,179,85,0.2)] text-[#dfb355] flex items-center justify-center font-bold text-xs">
+            <div key={item.id} className="p-4 sm:p-5 rounded-2xl bg-[rgba(28,21,18,0.7)] border border-[rgba(212,163,115,0.25)] shadow-md">
+              <div className="flex items-center justify-between mb-2.5">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[rgba(212,163,115,0.25)] text-[#f7e7ce] flex items-center justify-center font-bold text-sm border border-[rgba(212,163,115,0.4)]">
                     {item.name.charAt(0).toUpperCase()}
                   </div>
                   <div>
-                    <p className="font-semibold text-xs text-[#f9eaaf]">{item.name}</p>
-                    <p className="text-[10px] text-[#b8c4bc]">{item.createdAt}</p>
+                    <p className="font-semibold text-sm text-[#f7e7ce]">{item.name}</p>
+                    <p className="text-[11px] text-[#d4c3b5]">{item.createdAt}</p>
                   </div>
                 </div>
 
                 {item.attendance === 'hadir' && (
-                  <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-green-950 text-green-400 border border-green-800">
-                    <CheckCircle2 className="w-3 h-3" /> Hadir ({item.guestCount})
+                  <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-green-950/80 text-green-300 border border-green-800 font-semibold">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> Hadir ({item.guestCount})
                   </span>
                 )}
                 {item.attendance === 'ragu' && (
-                  <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-amber-950 text-amber-400 border border-amber-800">
-                    <HelpCircle className="w-3 h-3" /> Ragu
+                  <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-amber-950/80 text-amber-300 border border-amber-800 font-semibold">
+                    <HelpCircle className="w-3.5 h-3.5" /> Ragu
                   </span>
                 )}
                 {item.attendance === 'tidak_hadir' && (
-                  <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-red-950 text-red-400 border border-red-800">
-                    <XCircle className="w-3 h-3" /> Halangan
+                  <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-red-950/80 text-red-300 border border-red-800 font-semibold">
+                    <XCircle className="w-3.5 h-3.5" /> Halangan
                   </span>
                 )}
               </div>
 
-              <p className="text-xs text-[#f4efe6] leading-relaxed pl-9 italic">
+              <p className="text-sm text-[#fdfbf7] leading-relaxed pl-12 italic">
                 "{item.message}"
               </p>
             </div>
@@ -263,3 +263,4 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
     </section>
   );
 };
+

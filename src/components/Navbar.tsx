@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Calendar, MessageSquare, Gift, ShieldAlert, Music, Music2 } from 'lucide-react';
+import { Heart, Calendar, MessageSquare, Gift, Music, Music2 } from 'lucide-react';
 
 interface NavbarProps {
   activeSection: string;
@@ -37,14 +37,6 @@ export const Navbar: React.FC<NavbarProps> = ({
         {isPlayingMusic ? <Music className="w-5 h-5" /> : <Music2 className="w-5 h-5 opacity-60" />}
       </button>
 
-      {/* Admin Button on Header */}
-      <a
-        href="/admin"
-        className="fixed top-4 left-4 z-40 px-3 py-1.5 rounded-full text-xs font-semibold bg-[rgba(40,30,25,0.85)] text-[#d4a373] border border-[rgba(212,163,115,0.4)] flex items-center gap-1.5 shadow-lg backdrop-blur-md hover:bg-[#d4a373] hover:text-[#1c1512] transition-colors"
-      >
-        <ShieldAlert className="w-3.5 h-3.5" />
-        <span>Admin Link</span>
-      </a>
 
       {/* Bottom Sticky Mobile Navbar */}
       <nav className="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-[440px] bg-[rgba(28,21,18,0.95)] border border-[rgba(212,163,115,0.35)] backdrop-blur-xl rounded-full px-3 py-2 shadow-2xl">
