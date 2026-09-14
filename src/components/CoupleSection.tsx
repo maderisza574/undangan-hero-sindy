@@ -5,9 +5,9 @@ import couple3dImg from '../assets/3d_couple.jpg';
 
 export const CoupleSection = () => {
   return (
-    <section id="mempelai" className="px-5 py-10 text-center scroll-mt-6">
+    <section id="mempelai" className="px-5 py-12 sm:py-16 text-center scroll-mt-6">
       {/* Section Header */}
-      <div className="mb-8">
+      <div className="mb-10 sm:mb-12">
         <p className="text-xs font-sans text-[#d4c3b5] tracking-widest uppercase mb-1">
           MEMPELAI PENGANTIN
         </p>
@@ -15,7 +15,7 @@ export const CoupleSection = () => {
       </div>
 
       {/* Bride Card: Mempelai Wanita (Foto Kiri, Nama Kanan) */}
-      <div className="glass-card mb-6 p-5 sm:p-6 text-left shadow-xl">
+      <div className="glass-card mb-8 sm:mb-10 p-5 sm:p-6 text-left shadow-xl">
         <div className="flex items-center gap-5">
           {/* Foto Mempelai Wanita (Kiri) */}
           <div className="arch-frame w-32 sm:w-36 h-44 sm:h-48 shrink-0 relative overflow-hidden rounded-t-full shadow-lg">
@@ -53,14 +53,14 @@ export const CoupleSection = () => {
       </div>
 
       {/* Heart Divider */}
-      <div className="my-5 flex items-center justify-center gap-4 text-[#d4a373]">
+      <div className="my-10 py-3 flex items-center justify-center gap-4 text-[#d4a373]">
         <div className="h-[1px] w-20 bg-gradient-to-r from-transparent to-[#d4a373]"></div>
         <Heart className="w-6 h-6 fill-[#d4a373] animate-pulse" />
         <div className="h-[1px] w-20 bg-gradient-to-l from-transparent to-[#d4a373]"></div>
       </div>
 
       {/* Groom Card: Mempelai Pria (Foto Kanan, Nama Kiri) */}
-      <div className="glass-card mb-8 p-5 sm:p-6 text-right shadow-xl">
+      <div className="glass-card mt-2 mb-10 sm:mb-12 p-5 sm:p-6 text-right shadow-xl">
         <div className="flex items-center gap-5 flex-row-reverse">
           {/* Foto Mempelai Pria (Kanan) */}
           <div className="arch-frame w-32 sm:w-36 h-44 sm:h-48 shrink-0 relative overflow-hidden rounded-t-full shadow-lg">

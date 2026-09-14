@@ -51,36 +51,36 @@ export const EventSection: React.FC = () => {
       </div>
 
       {/* Countdown Timer Card */}
-      <div className="glass-card mt-6 mb-14 sm:mt-8 sm:mb-16 w-full flex flex-col items-center justify-center text-center p-6 sm:p-8">
-        <p className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase mb-5 flex items-center justify-center gap-1.5">
-          <Bell className="w-3.5 h-3.5" />
+      <div className="glass-card mt-8 mb-16 sm:mt-10 sm:mb-20 w-full flex flex-col items-center justify-center text-center p-7 sm:p-9 shadow-2xl">
+        <p className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase mb-6 flex items-center justify-center gap-2">
+          <Bell className="w-4 h-4" />
           <span>Menghitung Hari Bahagia</span>
         </p>
 
-        <div className="grid grid-cols-4 gap-2.5 my-2 w-full max-w-sm">
-          <div className="p-3 rounded-xl bg-[rgba(28,21,18,0.7)] border border-[rgba(212,163,115,0.3)] shadow-inner text-center">
-            <span className="block text-2xl font-bold font-serif text-[#f7e7ce]">
+        <div className="grid grid-cols-4 gap-3 my-4 sm:my-6 w-full max-w-sm">
+          <div className="p-3.5 sm:p-4 rounded-2xl bg-[rgba(28,21,18,0.75)] border border-[rgba(212,163,115,0.35)] shadow-inner text-center">
+            <span className="block text-2xl sm:text-3xl font-bold font-serif text-[#f7e7ce]">
               {timeLeft.days}
             </span>
-            <span className="text-[10px] text-[#d4c3b5] uppercase tracking-wider">Hari</span>
+            <span className="text-[10px] sm:text-xs text-[#d4c3b5] uppercase tracking-wider font-semibold">Hari</span>
           </div>
-          <div className="p-3 rounded-xl bg-[rgba(28,21,18,0.7)] border border-[rgba(212,163,115,0.3)] shadow-inner text-center">
-            <span className="block text-2xl font-bold font-serif text-[#f7e7ce]">
+          <div className="p-3.5 sm:p-4 rounded-2xl bg-[rgba(28,21,18,0.75)] border border-[rgba(212,163,115,0.35)] shadow-inner text-center">
+            <span className="block text-2xl sm:text-3xl font-bold font-serif text-[#f7e7ce]">
               {timeLeft.hours}
             </span>
-            <span className="text-[10px] text-[#d4c3b5] uppercase tracking-wider">Jam</span>
+            <span className="text-[10px] sm:text-xs text-[#d4c3b5] uppercase tracking-wider font-semibold">Jam</span>
           </div>
-          <div className="p-3 rounded-xl bg-[rgba(28,21,18,0.7)] border border-[rgba(212,163,115,0.3)] shadow-inner text-center">
-            <span className="block text-2xl font-bold font-serif text-[#f7e7ce]">
+          <div className="p-3.5 sm:p-4 rounded-2xl bg-[rgba(28,21,18,0.75)] border border-[rgba(212,163,115,0.35)] shadow-inner text-center">
+            <span className="block text-2xl sm:text-3xl font-bold font-serif text-[#f7e7ce]">
               {timeLeft.minutes}
             </span>
-            <span className="text-[10px] text-[#d4c3b5] uppercase tracking-wider">Menit</span>
+            <span className="text-[10px] sm:text-xs text-[#d4c3b5] uppercase tracking-wider font-semibold">Menit</span>
           </div>
-          <div className="p-3 rounded-xl bg-[rgba(28,21,18,0.7)] border border-[rgba(212,163,115,0.3)] shadow-inner text-center">
-            <span className="block text-2xl font-bold font-serif text-[#f7e7ce]">
+          <div className="p-3.5 sm:p-4 rounded-2xl bg-[rgba(28,21,18,0.75)] border border-[rgba(212,163,115,0.35)] shadow-inner text-center">
+            <span className="block text-2xl sm:text-3xl font-bold font-serif text-[#f7e7ce]">
               {timeLeft.seconds}
             </span>
-            <span className="text-[10px] text-[#d4c3b5] uppercase tracking-wider">Detik</span>
+            <span className="text-[10px] sm:text-xs text-[#d4c3b5] uppercase tracking-wider font-semibold">Detik</span>
           </div>
         </div>
 
@@ -88,9 +88,9 @@ export const EventSection: React.FC = () => {
           href={googleCalendarUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-outline-gold mt-5 text-xs w-full max-w-sm flex items-center justify-center gap-2 py-3"
+          className="btn-outline-gold mt-6 sm:mt-7 text-xs sm:text-sm w-full max-w-sm flex items-center justify-center gap-2 py-3.5 shadow-md"
         >
-          <CalendarPlus className="w-4 h-4" />
+          <CalendarPlus className="w-4 h-4 text-[#d4a373]" />
           <span>Simpan ke Google Calendar</span>
         </a>
       </div>
