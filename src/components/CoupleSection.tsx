@@ -99,7 +99,8 @@ export const CoupleSection = () => {
                 Putra Ketiga dari
               </p>
               <p className="font-semibold text-xs sm:text-sm text-[#fdfbf7] leading-relaxed">
-                Bpk. Suprayitno (Alm) &amp; Ibu Heni Ekowati (Alm)
+                Bpk. Suprayitno (Alm) &amp; <br />
+                Ibu Heni Ekowati (Alm)
               </p>
             </div>
           </div>

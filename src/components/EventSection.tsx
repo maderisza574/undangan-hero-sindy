@@ -118,19 +118,19 @@ export const EventSection: React.FC = () => {
             <span>Tasyakuran</span>
           </div>
 
-          <div className="space-y-3 text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center text-center">
-              <Clock className="w-4 h-4 text-[#d4a373] mb-1.5" />
+          <div className="space-y-4 text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center text-center pt-1">
+              <Clock className="w-4 h-4 text-[#d4a373] mt-1 mb-2" />
               <p className="font-semibold text-base font-serif text-[#f7e7ce] tracking-wide mb-1">
                 Tasyakuran 26-27 September 2026
               </p>
               <p className="text-[#d4c3b5] text-xs">Sabtu &amp; Minggu, 26 – 27 September 2026</p>
             </div>
 
-            <div className="flex flex-col items-center justify-center text-center pt-2">
-              <MapPin className="w-4 h-4 text-[#d4a373] mb-1" />
-              <p className="font-semibold text-sm text-[#f7e7ce]">Kediaman Mempelai Wanita</p>
-              <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs mt-0.5">
+            <div className="flex flex-col items-center justify-center text-center pt-4 pb-1">
+              <MapPin className="w-4 h-4 text-[#d4a373] mt-1 mb-2.5" />
+              <p className="font-semibold text-sm text-[#f7e7ce] mb-1">Kediaman Mempelai Wanita</p>
+              <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs">
                 Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
               </p>
             </div>
@@ -144,17 +144,17 @@ export const EventSection: React.FC = () => {
             <span>Akad dan Adat</span>
           </div>
 
-          <div className="space-y-3 text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center text-center">
-              <Clock className="w-4 h-4 text-[#d4a373] mb-1.5" />
+          <div className="space-y-4 text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center text-center pt-1">
+              <Clock className="w-4 h-4 text-[#d4a373] mt-1 mb-2" />
               <p className="font-semibold text-base text-[#f7e7ce]">Minggu, 27 September 2026</p>
-              <p className="text-[#d4a373] font-bold text-sm mt-0.5">09.00 WIB – selesai</p>
+              <p className="text-[#d4a373] font-bold text-sm mt-1">09.00 WIB – selesai</p>
             </div>
 
-            <div className="flex flex-col items-center justify-center text-center pt-2">
-              <MapPin className="w-4 h-4 text-[#d4a373] mb-1" />
-              <p className="font-semibold text-sm text-[#f7e7ce]">Kediaman Mempelai Wanita</p>
-              <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs mt-0.5">
+            <div className="flex flex-col items-center justify-center text-center pt-4 pb-1">
+              <MapPin className="w-4 h-4 text-[#d4a373] mt-1 mb-2.5" />
+              <p className="font-semibold text-sm text-[#f7e7ce] mb-1">Kediaman Mempelai Wanita</p>
+              <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs">
                 Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
               </p>
             </div>
@@ -168,17 +168,17 @@ export const EventSection: React.FC = () => {
             <span>Resepsi</span>
           </div>
 
-          <div className="space-y-3 text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center text-center">
-              <Clock className="w-4 h-4 text-[#d4a373] mb-1.5" />
+          <div className="space-y-4 text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center text-center pt-1">
+              <Clock className="w-4 h-4 text-[#d4a373] mt-1 mb-2" />
               <p className="font-semibold text-base text-[#f7e7ce]">Minggu, 27 September 2026</p>
-              <p className="text-[#d4a373] font-bold text-sm mt-0.5">12.30 WIB – selesai</p>
+              <p className="text-[#d4a373] font-bold text-sm mt-1">12.30 WIB – selesai</p>
             </div>
 
-            <div className="flex flex-col items-center justify-center text-center pt-2">
-              <MapPin className="w-4 h-4 text-[#d4a373] mb-1" />
-              <p className="font-semibold text-sm text-[#f7e7ce]">Kediaman Mempelai Wanita</p>
-              <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs mt-0.5">
+            <div className="flex flex-col items-center justify-center text-center pt-4 pb-1">
+              <MapPin className="w-4 h-4 text-[#d4a373] mt-1 mb-2.5" />
+              <p className="font-semibold text-sm text-[#f7e7ce] mb-1">Kediaman Mempelai Wanita</p>
+              <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs">
                 Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
               </p>
             </div>
