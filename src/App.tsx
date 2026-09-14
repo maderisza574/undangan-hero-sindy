@@ -15,7 +15,6 @@ export function App() {
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
   const [activeSection, setActiveSection] = useState('mempelai');
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const ytIframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
     // Parse ?to=... query parameter from URL
@@ -25,8 +24,8 @@ export function App() {
       setGuestName(toParam);
     }
 
-    // Audio element setup with local music.mp3 or custom audio
-    const audio = new Audio('/music.mp3');
+    // Audio element setup with local music.mpeg audio
+    const audio = new Audio('/music.mpeg');
     audio.loop = true;
     audioRef.current = audio;
 
@@ -40,55 +39,30 @@ export function App() {
     };
   }, []);
 
-  const sendYtCommand = (command: 'playVideo' | 'pauseVideo') => {
-    if (ytIframeRef.current && ytIframeRef.current.contentWindow) {
-      ytIframeRef.current.contentWindow.postMessage(
-        JSON.stringify({
-          event: 'command',
-          func: command,
-          args: []
-        }),
-        '*'
-      );
-    }
-  };
-
   // Handle Opening Invitation Cover
   const handleOpenInvitation = () => {
     setIsCoverOpen(true);
-    setIsPlayingMusic(true);
-
-    // Try playing local audio file (/music.mp3) first if present
     if (audioRef.current) {
       audioRef.current.play().then(() => {
-        // Success playing local audio, stop YouTube iframe from playing
-        sendYtCommand('pauseVideo');
-      }).catch(() => {
-        // If local audio is not available or fails, fallback exclusively to YouTube music
-        sendYtCommand('playVideo');
+        setIsPlayingMusic(true);
+      }).catch(err => {
+        console.log('Audio playback status:', err);
       });
-    } else {
-      sendYtCommand('playVideo');
     }
   };
 
   // Toggle Music Play/Pause
   const handleToggleMusic = () => {
+    if (!audioRef.current) return;
     if (isPlayingMusic) {
-      sendYtCommand('pauseVideo');
-      if (audioRef.current) audioRef.current.pause();
+      audioRef.current.pause();
       setIsPlayingMusic(false);
     } else {
-      if (audioRef.current) {
-        audioRef.current.play().then(() => {
-          sendYtCommand('pauseVideo');
-        }).catch(() => {
-          sendYtCommand('playVideo');
-        });
-      } else {
-        sendYtCommand('playVideo');
-      }
-      setIsPlayingMusic(true);
+      audioRef.current.play().then(() => {
+        setIsPlayingMusic(true);
+      }).catch(err => {
+        console.log('Audio playback error:', err);
+      });
     }
   };
 
@@ -110,18 +84,6 @@ export function App() {
     <div className="app-container">
       <div className="mobile-wrapper">
         
-        {/* YouTube Background Music Player (Hidden) */}
-        <iframe
-          ref={ytIframeRef}
-          id="yt-music-player"
-          width="1"
-          height="1"
-          src="https://www.youtube-nocookie.com/embed/gh9gOawL5bw?enablejsapi=1&autoplay=0&loop=1&playlist=gh9gOawL5bw&controls=0"
-          title="Background Music - Tangled I See The Light Saxophone"
-          allow="autoplay"
-          style={{ position: 'fixed', top: -9999, left: -9999, opacity: 0, pointerEvents: 'none' }}
-        />
-
         {/* Cover Envelope Overlay */}
         <InvitationCover
           guestName={guestName}
