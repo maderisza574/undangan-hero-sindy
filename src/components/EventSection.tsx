@@ -52,15 +52,25 @@ export const EventSection: React.FC = () => {
 
       {/* Countdown Timer Card */}
       <div 
-        className="glass-card w-full flex flex-col items-center justify-center text-center p-7 sm:p-9 shadow-2xl"
-        style={{ marginTop: '40px', marginBottom: '64px' }}
+        className="glass-card w-full flex flex-col items-center justify-center text-center shadow-2xl"
+        style={{ 
+          marginTop: '40px', 
+          marginBottom: '64px', 
+          paddingTop: '36px', 
+          paddingBottom: '36px', 
+          paddingLeft: '20px', 
+          paddingRight: '20px' 
+        }}
       >
-        <p className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase mb-6 flex items-center justify-center gap-2">
+        <p 
+          className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase flex items-center justify-center gap-2"
+          style={{ marginBottom: '28px' }}
+        >
           <Bell className="w-4 h-4" />
           <span>Menghitung Hari Bahagia</span>
         </p>
 
-        <div className="grid grid-cols-4 gap-3 my-4 sm:my-6 w-full max-w-sm">
+        <div className="grid grid-cols-4 gap-3 w-full max-w-sm" style={{ marginBottom: '4px' }}>
           <div className="p-3.5 sm:p-4 rounded-2xl bg-[rgba(28,21,18,0.75)] border border-[rgba(212,163,115,0.35)] shadow-inner text-center">
             <span className="block text-2xl sm:text-3xl font-bold font-serif text-[#f7e7ce]">
               {timeLeft.days}
