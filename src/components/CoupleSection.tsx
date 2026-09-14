@@ -53,7 +53,7 @@ export const CoupleSection = () => {
       </div>
 
       {/* Heart Divider */}
-      <div className="my-10 sm:my-12 py-2 flex items-center justify-center gap-4 text-[#d4a373]">
+      <div className="mt-8 mb-10 sm:mt-10 sm:mb-12 py-2 flex items-center justify-center gap-4 text-[#d4a373]">
         <div className="h-[1px] w-20 bg-gradient-to-r from-transparent to-[#d4a373]"></div>
         <Heart className="w-6 h-6 fill-[#d4a373] animate-pulse" />
         <div className="h-[1px] w-20 bg-gradient-to-l from-transparent to-[#d4a373]"></div>
