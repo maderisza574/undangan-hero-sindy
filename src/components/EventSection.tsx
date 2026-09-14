@@ -112,24 +112,27 @@ export const EventSection: React.FC = () => {
       {/* Schedule Cards Container */}
       <div className="space-y-6 w-full">
         {/* Tasyakuran Card */}
-        <div className="glass-card w-full text-center flex flex-col items-center justify-center p-6">
-          <div className="flex items-center justify-center gap-2 text-[#d4a373] font-serif font-bold text-xl mb-3 border-b border-[rgba(212,163,115,0.2)] pb-3 w-full">
+        <div className="glass-card w-full text-center flex flex-col items-center justify-center p-6 sm:p-7">
+          <div 
+            className="flex items-center justify-center gap-2 text-[#d4a373] font-serif font-bold text-xl border-b border-[rgba(212,163,115,0.2)] w-full"
+            style={{ marginBottom: '20px', paddingBottom: '16px' }}
+          >
             <Sparkles className="w-5 h-5 text-[#d4a373]" />
             <span>Tasyakuran</span>
           </div>
 
-          <div className="space-y-4 text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center text-center pt-1">
-              <Clock className="w-4 h-4 text-[#d4a373] mt-1 mb-2" />
-              <p className="font-semibold text-base font-serif text-[#f7e7ce] tracking-wide mb-1">
+          <div className="text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center text-center" style={{ marginBottom: '24px' }}>
+              <Clock className="w-4 h-4 text-[#d4a373]" style={{ marginTop: '6px', marginBottom: '12px' }} />
+              <p className="font-semibold text-base font-serif text-[#f7e7ce] tracking-wide mb-1.5">
                 Tasyakuran 26-27 September 2026
               </p>
               <p className="text-[#d4c3b5] text-xs">Sabtu &amp; Minggu, 26 – 27 September 2026</p>
             </div>
 
-            <div className="flex flex-col items-center justify-center text-center pt-4 pb-1">
-              <MapPin className="w-4 h-4 text-[#d4a373] mt-1 mb-2.5" />
-              <p className="font-semibold text-sm text-[#f7e7ce] mb-1">Kediaman Mempelai Wanita</p>
+            <div className="flex flex-col items-center justify-center text-center" style={{ paddingTop: '10px', paddingBottom: '6px' }}>
+              <MapPin className="w-4 h-4 text-[#d4a373]" style={{ marginTop: '8px', marginBottom: '12px' }} />
+              <p className="font-semibold text-sm text-[#f7e7ce]" style={{ marginBottom: '8px' }}>Kediaman Mempelai Wanita</p>
               <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs">
                 Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
               </p>
@@ -138,22 +141,25 @@ export const EventSection: React.FC = () => {
         </div>
 
         {/* Akad dan Adat Card */}
-        <div className="glass-card w-full text-center flex flex-col items-center justify-center p-6">
-          <div className="flex items-center justify-center gap-2 text-[#d4a373] font-serif font-bold text-xl mb-3 border-b border-[rgba(212,163,115,0.2)] pb-3 w-full">
+        <div className="glass-card w-full text-center flex flex-col items-center justify-center p-6 sm:p-7">
+          <div 
+            className="flex items-center justify-center gap-2 text-[#d4a373] font-serif font-bold text-xl border-b border-[rgba(212,163,115,0.2)] w-full"
+            style={{ marginBottom: '20px', paddingBottom: '16px' }}
+          >
             <Calendar className="w-5 h-5 text-[#d4a373]" />
             <span>Akad dan Adat</span>
           </div>
 
-          <div className="space-y-4 text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center text-center pt-1">
-              <Clock className="w-4 h-4 text-[#d4a373] mt-1 mb-2" />
+          <div className="text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center text-center" style={{ marginBottom: '24px' }}>
+              <Clock className="w-4 h-4 text-[#d4a373]" style={{ marginTop: '6px', marginBottom: '12px' }} />
               <p className="font-semibold text-base text-[#f7e7ce]">Minggu, 27 September 2026</p>
-              <p className="text-[#d4a373] font-bold text-sm mt-1">09.00 WIB – selesai</p>
+              <p className="text-[#d4a373] font-bold text-sm" style={{ marginTop: '4px' }}>09.00 WIB – selesai</p>
             </div>
 
-            <div className="flex flex-col items-center justify-center text-center pt-4 pb-1">
-              <MapPin className="w-4 h-4 text-[#d4a373] mt-1 mb-2.5" />
-              <p className="font-semibold text-sm text-[#f7e7ce] mb-1">Kediaman Mempelai Wanita</p>
+            <div className="flex flex-col items-center justify-center text-center" style={{ paddingTop: '10px', paddingBottom: '6px' }}>
+              <MapPin className="w-4 h-4 text-[#d4a373]" style={{ marginTop: '8px', marginBottom: '12px' }} />
+              <p className="font-semibold text-sm text-[#f7e7ce]" style={{ marginBottom: '8px' }}>Kediaman Mempelai Wanita</p>
               <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs">
                 Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
               </p>
@@ -162,22 +168,25 @@ export const EventSection: React.FC = () => {
         </div>
 
         {/* Resepsi Card */}
-        <div className="glass-card w-full text-center flex flex-col items-center justify-center p-6">
-          <div className="flex items-center justify-center gap-2 text-[#d4a373] font-serif font-bold text-xl mb-3 border-b border-[rgba(212,163,115,0.2)] pb-3 w-full">
+        <div className="glass-card w-full text-center flex flex-col items-center justify-center p-6 sm:p-7">
+          <div 
+            className="flex items-center justify-center gap-2 text-[#d4a373] font-serif font-bold text-xl border-b border-[rgba(212,163,115,0.2)] w-full"
+            style={{ marginBottom: '20px', paddingBottom: '16px' }}
+          >
             <Calendar className="w-5 h-5 text-[#d4a373]" />
             <span>Resepsi</span>
           </div>
 
-          <div className="space-y-4 text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center text-center pt-1">
-              <Clock className="w-4 h-4 text-[#d4a373] mt-1 mb-2" />
+          <div className="text-xs text-[#fdfbf7] w-full flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center text-center" style={{ marginBottom: '24px' }}>
+              <Clock className="w-4 h-4 text-[#d4a373]" style={{ marginTop: '6px', marginBottom: '12px' }} />
               <p className="font-semibold text-base text-[#f7e7ce]">Minggu, 27 September 2026</p>
-              <p className="text-[#d4a373] font-bold text-sm mt-1">12.30 WIB – selesai</p>
+              <p className="text-[#d4a373] font-bold text-sm" style={{ marginTop: '4px' }}>12.30 WIB – selesai</p>
             </div>
 
-            <div className="flex flex-col items-center justify-center text-center pt-4 pb-1">
-              <MapPin className="w-4 h-4 text-[#d4a373] mt-1 mb-2.5" />
-              <p className="font-semibold text-sm text-[#f7e7ce] mb-1">Kediaman Mempelai Wanita</p>
+            <div className="flex flex-col items-center justify-center text-center" style={{ paddingTop: '10px', paddingBottom: '6px' }}>
+              <MapPin className="w-4 h-4 text-[#d4a373]" style={{ marginTop: '8px', marginBottom: '12px' }} />
+              <p className="font-semibold text-sm text-[#f7e7ce]" style={{ marginBottom: '8px' }}>Kediaman Mempelai Wanita</p>
               <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs">
                 Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
               </p>
