@@ -18,21 +18,22 @@ import {
 import type { Guest } from '../types';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
-const DEFAULT_TEMPLATE = `Assalamualaikum Warahmatullahi Wabarakatuh
+const DEFAULT_TEMPLATE = `Assalamu'alaikum Wr. Wb.
 
-Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i {NAMA_TAMU} untuk menghadiri acara kami.
+Kepada Yth. {NAMA_TAMU}
 
-Berikut link undangan kami, untuk info lengkap dari acara bisa kunjungi :
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami:
 
+Hero Saksono & Sindy Ayunda Putri
+
+Sabtu & Minggu, 26-27 September 2026
+
+Berikut link undangan digital kami:
 {LINK_UNDANGAN}
 
-Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+Merupakan suatu kehormatan & kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
 
-*Mohon maaf perihal undangan hanya di bagikan melalui pesan ini.
-
-Terima kasih banyak atas perhatiannya.
-
-Wassalamualaikum Warahmatullahi Wabarakatuh`;
+Wassalamu'alaikum Wr. Wb.`;
 
 export const AdminPage: React.FC = () => {
   const [guestName, setGuestName] = useState('');
@@ -79,10 +80,10 @@ export const AdminPage: React.FC = () => {
         const sampleGuests: Guest[] = [
           {
             id: '1',
-            name: 'Desphi',
-            phone: '08123456789',
+            name: 'mba despi',
+            phone: '',
             status: 'pending',
-            generatedUrl: `${window.location.origin}/?to=${encodeURIComponent('Desphi')}`,
+            generatedUrl: `https://undangan-hero-sindy.vercel.app/?to=${encodeURIComponent('mba despi')}`,
             createdAt: new Date().toISOString().slice(0, 10)
           },
           {
@@ -90,7 +91,7 @@ export const AdminPage: React.FC = () => {
             name: 'Bapak Ahmad & Keluarga',
             phone: '',
             status: 'sent',
-            generatedUrl: `${window.location.origin}/?to=${encodeURIComponent('Bapak Ahmad & Keluarga')}`,
+            generatedUrl: `https://undangan-hero-sindy.vercel.app/?to=${encodeURIComponent('Bapak Ahmad & Keluarga')}`,
             createdAt: new Date().toISOString().slice(0, 10)
           }
         ];

@@ -33,7 +33,8 @@ export const EventSection: React.FC = () => {
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Hero+%26+Sindy&dates=20260927T010000Z/20260927T090000Z&details=Pernikahan+Hero+Saksono+%26+Sindy+Ayunda+Putri.+Akad+dan+Resepsi.&location=Gedung+Pernikahan+Bahagia`;
+  const mapsUrl = `https://www.google.com/maps/place/7%C2%B023'45.4%22S+109%C2%B017'41.1%22E/@-7.395932,109.2921725,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-7.395932!4d109.2947474?hl=en&entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D`;
+  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Hero+%26+Sindy&dates=20260927T010000Z/20260927T090000Z&details=Pernikahan+Hero+Saksono+%26+Sindy+Ayunda+Putri.+Akad+dan+Resepsi.&location=Kediaman+Mempelai+Wanita,+Jl.+Grumbul+Bakung+Kulon+No.51+Banyumas`;
 
   return (
     <section id="acara" className="px-5 py-8 text-center scroll-mt-6 flex flex-col items-center justify-center">
@@ -46,8 +47,12 @@ export const EventSection: React.FC = () => {
           Waktu &amp; Tempat
         </h2>
         <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto my-3"></div>
-        <div className="inline-block px-4 py-1.5 rounded-full bg-[rgba(212,163,115,0.15)] border border-[rgba(212,163,115,0.3)] text-xs text-[#f7e7ce] font-semibold text-center">
-          Sabtu &amp; Minggu, 26 - 27 September 2026
+        
+        {/* Prominent Large Date Highlight */}
+        <div className="w-full max-w-sm px-5 py-3 rounded-2xl bg-gradient-to-r from-[rgba(212,163,115,0.25)] via-[rgba(212,163,115,0.15)] to-[rgba(212,163,115,0.25)] border border-[#d4a373] text-center shadow-lg my-2">
+          <p className="text-base sm:text-lg font-bold font-serif text-[#f7e7ce] tracking-wide text-gold">
+            Sabtu &amp; Minggu, 26 – 27 September 2026
+          </p>
         </div>
       </div>
 
@@ -114,7 +119,7 @@ export const EventSection: React.FC = () => {
             <MapPin className="w-4 h-4 text-[#d4a373] mb-1" />
             <p className="font-semibold text-sm text-[#f7e7ce]">Kediaman Mempelai Wanita</p>
             <p className="text-[#d4c3b5] leading-relaxed max-w-xs">
-              Jl. Mawar Indah No. 27, Sidoarjo, Jawa Timur (Lokasi Acara Akad)
+              Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
             </p>
           </div>
         </div>
@@ -136,9 +141,9 @@ export const EventSection: React.FC = () => {
 
           <div className="flex flex-col items-center justify-center text-center pt-2">
             <MapPin className="w-4 h-4 text-[#d4a373] mb-1" />
-            <p className="font-semibold text-sm text-[#f7e7ce]">Gedung Pertemuan Utama</p>
+            <p className="font-semibold text-sm text-[#f7e7ce]">Kediaman Mempelai Wanita</p>
             <p className="text-[#d4c3b5] leading-relaxed max-w-xs">
-              Grand Ballroom Hall, Sidoarjo, Jawa Timur
+              Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
             </p>
           </div>
         </div>
@@ -147,7 +152,7 @@ export const EventSection: React.FC = () => {
       {/* Location Map Button */}
       <div className="mt-2 w-full flex items-center justify-center">
         <a
-          href="https://maps.google.com"
+          href={mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-gold max-w-sm flex items-center justify-center gap-2"

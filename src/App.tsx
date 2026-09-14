@@ -15,6 +15,7 @@ export function App() {
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
   const [activeSection, setActiveSection] = useState('mempelai');
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const ytIframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
     // Parse ?to=... query parameter from URL
@@ -24,7 +25,7 @@ export function App() {
       setGuestName(toParam);
     }
 
-    // Audio element setup with peaceful instrumental audio
+    // Fallback audio element setup
     const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-piano-114421.mp3');
     audio.loop = true;
     audioRef.current = audio;
@@ -39,26 +40,43 @@ export function App() {
     };
   }, []);
 
+  const sendYtCommand = (command: 'playVideo' | 'pauseVideo') => {
+    if (ytIframeRef.current && ytIframeRef.current.contentWindow) {
+      ytIframeRef.current.contentWindow.postMessage(
+        JSON.stringify({
+          event: 'command',
+          func: command,
+          args: []
+        }),
+        '*'
+      );
+    }
+  };
+
   // Handle Opening Invitation Cover
   const handleOpenInvitation = () => {
     setIsCoverOpen(true);
+    // Play YouTube music
+    sendYtCommand('playVideo');
+    setIsPlayingMusic(true);
+
+    // Fallback audio play attempt
     if (audioRef.current) {
-      audioRef.current.play().then(() => {
-        setIsPlayingMusic(true);
-      }).catch(err => {
-        console.log('Audio autoplay prevented or error:', err);
+      audioRef.current.play().catch(err => {
+        console.log('Audio playback status:', err);
       });
     }
   };
 
   // Toggle Music Play/Pause
   const handleToggleMusic = () => {
-    if (!audioRef.current) return;
     if (isPlayingMusic) {
-      audioRef.current.pause();
+      sendYtCommand('pauseVideo');
+      if (audioRef.current) audioRef.current.pause();
       setIsPlayingMusic(false);
     } else {
-      audioRef.current.play();
+      sendYtCommand('playVideo');
+      if (audioRef.current) audioRef.current.play().catch(() => {});
       setIsPlayingMusic(true);
     }
   };
@@ -81,6 +99,18 @@ export function App() {
     <div className="app-container">
       <div className="mobile-wrapper">
         
+        {/* YouTube Background Music Player (Hidden) */}
+        <iframe
+          ref={ytIframeRef}
+          id="yt-music-player"
+          width="1"
+          height="1"
+          src="https://www.youtube-nocookie.com/embed/gh9gOawL5bw?enablejsapi=1&autoplay=0&loop=1&playlist=gh9gOawL5bw&controls=0"
+          title="Background Music - Tangled I See The Light Saxophone"
+          allow="autoplay"
+          style={{ position: 'fixed', top: -9999, left: -9999, opacity: 0, pointerEvents: 'none' }}
+        />
+
         {/* Cover Envelope Overlay */}
         <InvitationCover
           guestName={guestName}
