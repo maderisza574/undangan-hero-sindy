@@ -7,18 +7,15 @@ export const CoupleSection = () => {
   return (
     <section id="mempelai" className="px-5 py-10 text-center scroll-mt-6">
       {/* Section Header */}
-      <div className="mb-10">
+      <div className="mb-8">
         <p className="text-xs font-sans text-[#d4c3b5] tracking-widest uppercase mb-1">
           MEMPELAI PENGANTIN
         </p>
-        <h2 className="text-4xl sm:text-5xl font-cursive text-gold">
-          Mempelai Wanita &amp; Pria
-        </h2>
-        <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto my-3"></div>
+        <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto my-2"></div>
       </div>
 
       {/* Bride Card: Mempelai Wanita (Foto Kiri, Nama Kanan) */}
-      <div className="glass-card mb-8 p-5 sm:p-6 text-left shadow-xl">
+      <div className="glass-card mb-6 p-5 sm:p-6 text-left shadow-xl">
         <div className="flex items-center gap-5">
           {/* Foto Mempelai Wanita (Kiri) */}
           <div className="arch-frame w-32 sm:w-36 h-44 sm:h-48 shrink-0 relative overflow-hidden rounded-t-full shadow-lg">
@@ -36,6 +33,9 @@ export const CoupleSection = () => {
 
           {/* Nama & Detail Mempelai Wanita (Kanan) */}
           <div className="flex-1 min-w-0 pr-1">
+            <p className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase mb-1">
+              Mempelai Wanita
+            </p>
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#f7e7ce] mb-1.5 leading-snug">
               Sindy Ayunda Putri
             </h3>
@@ -53,7 +53,7 @@ export const CoupleSection = () => {
       </div>
 
       {/* Heart Divider */}
-      <div className="my-8 flex items-center justify-center gap-4 text-[#d4a373]">
+      <div className="my-5 flex items-center justify-center gap-4 text-[#d4a373]">
         <div className="h-[1px] w-20 bg-gradient-to-r from-transparent to-[#d4a373]"></div>
         <Heart className="w-6 h-6 fill-[#d4a373] animate-pulse" />
         <div className="h-[1px] w-20 bg-gradient-to-l from-transparent to-[#d4a373]"></div>
@@ -78,6 +78,9 @@ export const CoupleSection = () => {
 
           {/* Nama & Detail Mempelai Pria (Kiri) */}
           <div className="flex-1 min-w-0 pl-1">
+            <p className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase mb-1">
+              Mempelai Pria
+            </p>
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#f7e7ce] mb-1.5 leading-snug">
               Hero Saksono
             </h3>

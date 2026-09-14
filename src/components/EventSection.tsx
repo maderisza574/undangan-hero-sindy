@@ -51,7 +51,7 @@ export const EventSection: React.FC = () => {
       </div>
 
       {/* Countdown Timer Card */}
-      <div className="glass-card mt-2 mb-10 w-full flex flex-col items-center justify-center text-center p-6 sm:p-8">
+      <div className="glass-card mt-6 mb-14 sm:mt-8 sm:mb-16 w-full flex flex-col items-center justify-center text-center p-6 sm:p-8">
         <p className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase mb-5 flex items-center justify-center gap-1.5">
           <Bell className="w-3.5 h-3.5" />
           <span>Menghitung Hari Bahagia</span>
