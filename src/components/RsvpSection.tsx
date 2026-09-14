@@ -114,15 +114,15 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
   return (
     <section id="rsvp" className="px-5 py-8 text-center scroll-mt-6 mb-20">
       {/* Header */}
-      <div className="mb-6">
-        <p className="text-xs font-serif text-[#b8c4bc] tracking-widest uppercase mb-1">
+      <div className="mb-8 flex flex-col items-center justify-center text-center w-full">
+        <p className="text-xs font-serif text-[#b8c4bc] tracking-widest uppercase mb-1 text-center">
           Konfirmasi Kehadiran
         </p>
-        <h2 className="text-3xl font-serif font-bold text-gold">
+        <h2 className="text-3xl font-serif font-bold text-gold text-center">
           RSVP &amp; Ucapan Doa
         </h2>
-        <div className="gold-divider"></div>
-        <p className="text-xs text-[#b8c4bc] max-w-xs mx-auto">
+        <div className="gold-divider mx-auto my-3"></div>
+        <p className="text-xs sm:text-sm text-[#b8c4bc] max-w-sm mx-auto text-center leading-relaxed">
           Mohon konfirmasikan kehadiran Anda dan berikan ucapan serta doa terbaik untuk mempelai.
         </p>
       </div>
@@ -216,9 +216,9 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
       </div>
 
       {/* Live Wishes Feed */}
-      <div className="text-left space-y-4">
-        <p className="text-sm font-bold text-[#d4a373] tracking-wider uppercase mb-3 flex items-center gap-2">
-          <MessageSquare className="w-4 h-4" />
+      <div className="w-full text-center flex flex-col items-center justify-center space-y-4">
+        <p className="text-sm font-bold text-[#d4a373] tracking-wider uppercase mb-3 flex items-center justify-center gap-2 text-center w-full">
+          <MessageSquare className="w-4 h-4 text-[#d4a373]" />
           <span>Ucapan Doa Restu ({messages.length})</span>
         </p>
 
