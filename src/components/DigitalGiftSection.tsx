@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { Copy, Check, Wallet, Building2 } from 'lucide-react';
-import bniLogo from '../assets/bni_logo.png';
-import bcaLogo from '../assets/bca_logo.png';
-import ewalletLogo from '../assets/ewallet_logo.png';
+import bniLogo from '../assets/logos/bni.png';
+import bcaLogo from '../assets/logos/bca.png';
+import danaLogo from '../assets/logos/dana.png';
+import ovoLogo from '../assets/logos/ovo.png';
+import shopeepayLogo from '../assets/logos/shopeepay.png';
+import gopayLogo from '../assets/logos/gopay.png';
 
 export const DigitalGiftSection = () => {
   const [copiedAccount, setCopiedAccount] = useState<string | null>(null);
@@ -26,12 +29,11 @@ export const DigitalGiftSection = () => {
     },
     {
       id: 'ewallet',
-      type: 'E-Wallet (DANA, OVO, ShopeePay, GoPay)',
-      logo: ewalletLogo,
+      type: 'E-Wallet',
       accountNumber: '082136882616',
       accountHolder: 'Sindy Ayunda Putri',
-      badge: 'E-Wallet',
-      tags: ['DANA', 'OVO', 'ShopeePay', 'GoPay']
+      badge: 'DANA, OVO, ShopeePay, GoPay',
+      isEwallet: true
     }
   ];
 
@@ -66,9 +68,11 @@ export const DigitalGiftSection = () => {
               {/* Header with Logo */}
               <div className="flex items-center justify-between border-b border-[rgba(212,163,115,0.25)] pb-4 mb-4 w-full">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 px-3 py-1 rounded-xl bg-white/90 flex items-center justify-center border border-[#d4a373]/30 shadow-sm">
-                    <img src={item.logo} alt={item.type} className="h-6 object-contain" />
-                  </div>
+                  {!item.isEwallet && item.logo && (
+                    <div className="h-9 px-1 flex items-center justify-center">
+                      <img src={item.logo} alt={item.type} className="h-7 sm:h-8 object-contain drop-shadow" />
+                    </div>
+                  )}
                   <div className="text-left">
                     <span className="font-serif font-bold text-base text-[#f7e7ce] block">
                       {item.type}
@@ -78,17 +82,27 @@ export const DigitalGiftSection = () => {
                     </span>
                   </div>
                 </div>
-                {item.tags ? (
+                {item.isEwallet ? (
                   <Wallet className="w-5 h-5 text-[#d4a373]" />
                 ) : (
                   <Building2 className="w-5 h-5 text-[#d4a373]" />
                 )}
               </div>
 
+              {/* Individual E-Wallet Transparent Logos (Dijejerkan Satu per Satu) */}
+              {item.isEwallet && (
+                <div className="w-full flex items-center justify-around sm:justify-center gap-3 sm:gap-6 py-3 px-3 rounded-2xl bg-[rgba(20,15,12,0.4)] border border-[rgba(212,163,115,0.2)] mb-4">
+                  <img src={danaLogo} alt="DANA" className="h-6 sm:h-7 object-contain drop-shadow" />
+                  <img src={ovoLogo} alt="OVO" className="h-5 sm:h-6 object-contain drop-shadow" />
+                  <img src={shopeepayLogo} alt="ShopeePay" className="h-7 sm:h-8 object-contain drop-shadow" />
+                  <img src={gopayLogo} alt="GoPay" className="h-5 sm:h-6 object-contain drop-shadow" />
+                </div>
+              )}
+
               {/* Account Details */}
               <div className="space-y-2 text-xs mb-5 text-center w-full">
                 <p className="text-[#d4c3b5] font-medium text-[11px]">
-                  {item.tags ? 'Nomor E-Wallet (DANA / OVO / ShopeePay / GoPay):' : 'Nomor Rekening:'}
+                  {item.isEwallet ? 'Nomor E-Wallet (DANA / OVO / ShopeePay / GoPay):' : 'Nomor Rekening:'}
                 </p>
                 <p className="font-mono text-2xl font-bold text-[#fdfbf7] tracking-wider py-1 bg-[rgba(20,15,12,0.6)] rounded-xl border border-[rgba(212,163,115,0.2)]">
                   {item.accountNumber}
@@ -96,17 +110,6 @@ export const DigitalGiftSection = () => {
                 <p className="text-[#d4c3b5] pt-1">
                   Atas Nama: <span className="text-[#f7e7ce] font-bold text-sm">{item.accountHolder}</span>
                 </p>
-
-                {/* E-wallet Tag Badges */}
-                {item.tags && (
-                  <div className="flex flex-wrap justify-center gap-1.5 pt-2">
-                    {item.tags.map((tag) => (
-                      <span key={tag} className="text-[10px] px-2.5 py-0.5 rounded-full bg-[#d4a373]/15 text-[#f7e7ce] border border-[#d4a373]/30 font-semibold">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </div>
 
               {/* Copy Button */}
@@ -124,7 +127,7 @@ export const DigitalGiftSection = () => {
                 ) : (
                   <>
                     <Copy className="w-4 h-4" />
-                    <span>Salin Nomor {item.tags ? 'E-Wallet' : 'Rekening'}</span>
+                    <span>Salin Nomor {item.isEwallet ? 'E-Wallet' : 'Rekening'}</span>
                   </>
                 )}
               </button>
@@ -135,4 +138,5 @@ export const DigitalGiftSection = () => {
     </section>
   );
 };
+
 

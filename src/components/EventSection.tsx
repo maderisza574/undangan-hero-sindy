@@ -39,20 +39,20 @@ export const EventSection: React.FC = () => {
   return (
     <section id="acara" className="px-5 py-10 text-center scroll-mt-6 flex flex-col items-center justify-center">
       {/* Section Title */}
-      <div className="mb-8 w-full flex flex-col items-center justify-center">
-        <p className="text-xs font-serif text-[#d4c3b5] tracking-widest uppercase mb-1 text-center">
+      <div className="mb-10 sm:mb-12 w-full flex flex-col items-center justify-center">
+        <p className="text-xs font-serif text-[#d4c3b5] tracking-widest uppercase mb-2 text-center">
           Rangkaian Acara
         </p>
-        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gold text-center leading-snug mb-2">
+        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gold text-center leading-snug mb-3">
           Sabtu &amp; Minggu, <br />
           26 – 27 September 2026
         </h2>
-        <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto my-3"></div>
+        <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto my-2"></div>
       </div>
 
       {/* Countdown Timer Card */}
-      <div className="glass-card mb-8 w-full flex flex-col items-center justify-center text-center p-6">
-        <p className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase mb-4 flex items-center justify-center gap-1.5">
+      <div className="glass-card mt-2 mb-10 w-full flex flex-col items-center justify-center text-center p-6 sm:p-8">
+        <p className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase mb-5 flex items-center justify-center gap-1.5">
           <Bell className="w-3.5 h-3.5" />
           <span>Menghitung Hari Bahagia</span>
         </p>
