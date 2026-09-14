@@ -25,8 +25,8 @@ export function App() {
       setGuestName(toParam);
     }
 
-    // Fallback audio element setup
-    const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-piano-114421.mp3');
+    // Audio element setup with local music.mp3 or custom audio
+    const audio = new Audio('/music.mp3');
     audio.loop = true;
     audioRef.current = audio;
 
@@ -56,15 +56,19 @@ export function App() {
   // Handle Opening Invitation Cover
   const handleOpenInvitation = () => {
     setIsCoverOpen(true);
-    // Play YouTube music
-    sendYtCommand('playVideo');
     setIsPlayingMusic(true);
 
-    // Fallback audio play attempt
+    // Try playing local audio file (/music.mp3) first if present
     if (audioRef.current) {
-      audioRef.current.play().catch(err => {
-        console.log('Audio playback status:', err);
+      audioRef.current.play().then(() => {
+        // Success playing local audio, stop YouTube iframe from playing
+        sendYtCommand('pauseVideo');
+      }).catch(() => {
+        // If local audio is not available or fails, fallback exclusively to YouTube music
+        sendYtCommand('playVideo');
       });
+    } else {
+      sendYtCommand('playVideo');
     }
   };
 
@@ -75,8 +79,15 @@ export function App() {
       if (audioRef.current) audioRef.current.pause();
       setIsPlayingMusic(false);
     } else {
-      sendYtCommand('playVideo');
-      if (audioRef.current) audioRef.current.play().catch(() => {});
+      if (audioRef.current) {
+        audioRef.current.play().then(() => {
+          sendYtCommand('pauseVideo');
+        }).catch(() => {
+          sendYtCommand('playVideo');
+        });
+      } else {
+        sendYtCommand('playVideo');
+      }
       setIsPlayingMusic(true);
     }
   };
