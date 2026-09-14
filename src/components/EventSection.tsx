@@ -51,7 +51,10 @@ export const EventSection: React.FC = () => {
       </div>
 
       {/* Countdown Timer Card */}
-      <div className="glass-card mt-8 mb-16 sm:mt-10 sm:mb-20 w-full flex flex-col items-center justify-center text-center p-7 sm:p-9 shadow-2xl">
+      <div 
+        className="glass-card w-full flex flex-col items-center justify-center text-center p-7 sm:p-9 shadow-2xl"
+        style={{ marginTop: '40px', marginBottom: '64px' }}
+      >
         <p className="text-xs font-semibold text-[#d4a373] tracking-widest uppercase mb-6 flex items-center justify-center gap-2">
           <Bell className="w-4 h-4" />
           <span>Menghitung Hari Bahagia</span>
@@ -88,7 +91,8 @@ export const EventSection: React.FC = () => {
           href={googleCalendarUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-outline-gold mt-10 sm:mt-12 text-xs sm:text-sm w-full max-w-sm flex items-center justify-center gap-2 py-3.5 shadow-md"
+          className="btn-outline-gold text-xs sm:text-sm w-full max-w-sm flex items-center justify-center gap-2 py-3.5 shadow-md"
+          style={{ marginTop: '36px' }}
         >
           <CalendarPlus className="w-4 h-4 text-[#d4a373]" />
           <span>Simpan ke Google Calendar</span>
