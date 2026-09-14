@@ -89,13 +89,21 @@ export const DigitalGiftSection = () => {
                 )}
               </div>
 
-              {/* Individual E-Wallet Transparent Logos (Dijejerkan Satu per Satu) */}
+              {/* Individual E-Wallet Transparent Logos (Dijejerkan Utuh Tanpa Terpotong) */}
               {item.isEwallet && (
-                <div className="w-full flex items-center justify-around sm:justify-center gap-3 sm:gap-6 py-3 px-3 rounded-2xl bg-[rgba(20,15,12,0.4)] border border-[rgba(212,163,115,0.2)] mb-4">
-                  <img src={danaLogo} alt="DANA" className="h-6 sm:h-7 object-contain drop-shadow" />
-                  <img src={ovoLogo} alt="OVO" className="h-5 sm:h-6 object-contain drop-shadow" />
-                  <img src={shopeepayLogo} alt="ShopeePay" className="h-7 sm:h-8 object-contain drop-shadow" />
-                  <img src={gopayLogo} alt="GoPay" className="h-5 sm:h-6 object-contain drop-shadow" />
+                <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 py-3 px-3 rounded-2xl bg-[rgba(15,10,8,0.5)] border border-[rgba(212,163,115,0.2)] mb-4">
+                  <div className="flex items-center justify-center py-2 px-3 rounded-xl bg-[rgba(35,26,21,0.6)] border border-[rgba(212,163,115,0.15)]">
+                    <img src={danaLogo} alt="DANA" className="h-6 sm:h-7 object-contain drop-shadow" />
+                  </div>
+                  <div className="flex items-center justify-center py-2 px-3 rounded-xl bg-[rgba(35,26,21,0.6)] border border-[rgba(212,163,115,0.15)]">
+                    <img src={ovoLogo} alt="OVO" className="h-6 sm:h-7 object-contain drop-shadow" />
+                  </div>
+                  <div className="flex items-center justify-center py-2 px-3 rounded-xl bg-[rgba(35,26,21,0.6)] border border-[rgba(212,163,115,0.15)]">
+                    <img src={shopeepayLogo} alt="ShopeePay" className="h-6 sm:h-7 object-contain drop-shadow" />
+                  </div>
+                  <div className="flex items-center justify-center py-2 px-3 rounded-xl bg-[rgba(35,26,21,0.6)] border border-[rgba(212,163,115,0.15)]">
+                    <img src={gopayLogo} alt="GoPay" className="h-6 sm:h-7 object-contain drop-shadow" />
+                  </div>
                 </div>
               )}
 
