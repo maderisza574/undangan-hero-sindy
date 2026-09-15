@@ -40,9 +40,11 @@ ALTER TABLE public.rsvp_messages ENABLE ROW LEVEL SECURITY;
 
 DROP POLICY IF EXISTS "Allow public read access to rsvp_messages" ON public.rsvp_messages;
 DROP POLICY IF EXISTS "Allow public insert access to rsvp_messages" ON public.rsvp_messages;
+DROP POLICY IF EXISTS "Allow public delete access to rsvp_messages" ON public.rsvp_messages;
 
 CREATE POLICY "Allow public read access to rsvp_messages" ON public.rsvp_messages FOR SELECT USING (true);
 CREATE POLICY "Allow public insert access to rsvp_messages" ON public.rsvp_messages FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public delete access to rsvp_messages" ON public.rsvp_messages FOR DELETE USING (true);
 
 -- Enable Realtime Sync
 DO $$
