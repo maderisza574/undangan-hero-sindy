@@ -34,7 +34,7 @@ export const EventSection: React.FC = () => {
   }, [targetDate]);
 
   const mapsUrl = `https://goo.gl/maps/RgHYXsERLsZkjH3PA?g_st=aw`;
-  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Hero+%26+Sindy&dates=20260927T020000Z/20260927T100000Z&details=Pernikahan+Hero+Saksono+%26+Sindy+Ayunda+Putri.+Akad+dan+Adat+serta+Resepsi.&location=Kediaman+Mempelai+Wanita,+Jl.+Grumbul+Bakung+Kulon+No.51+Banyumas`;
+  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Hero+%26+Sindy&dates=20260927T020000Z/20260927T100000Z&details=Pernikahan+Hero+Saksono+%26+Sindy+Ayunda+Putri.+Akad+dan+Adat+serta+Resepsi.&location=Kediaman+Mempelai+Wanita,+Jl.+Grumbul+Bakung+Kulon+No.51+RT.5/RW.1,+Desa+Linggasari,+Kec.+Kembaran,+Kab.+Banyumas`;
 
   return (
     <section id="acara" className="px-5 py-10 text-center scroll-mt-6 flex flex-col items-center justify-center">
@@ -134,7 +134,7 @@ export const EventSection: React.FC = () => {
               <MapPin className="w-4 h-4 text-[#d4a373]" style={{ marginTop: '8px', marginBottom: '12px' }} />
               <p className="font-semibold text-sm text-[#f7e7ce]" style={{ marginBottom: '8px' }}>Kediaman Mempelai Wanita</p>
               <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs">
-                Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
+                Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Desa Linggasari, Kec. Kembaran, Kab. Banyumas, Jawa Tengah, 53182
               </p>
             </div>
           </div>
@@ -161,7 +161,7 @@ export const EventSection: React.FC = () => {
               <MapPin className="w-4 h-4 text-[#d4a373]" style={{ marginTop: '8px', marginBottom: '12px' }} />
               <p className="font-semibold text-sm text-[#f7e7ce]" style={{ marginBottom: '8px' }}>Kediaman Mempelai Wanita</p>
               <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs">
-                Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
+                Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Desa Linggasari, Kec. Kembaran, Kab. Banyumas, Jawa Tengah, 53182
               </p>
             </div>
           </div>
@@ -188,7 +188,7 @@ export const EventSection: React.FC = () => {
               <MapPin className="w-4 h-4 text-[#d4a373]" style={{ marginTop: '8px', marginBottom: '12px' }} />
               <p className="font-semibold text-sm text-[#f7e7ce]" style={{ marginBottom: '8px' }}>Kediaman Mempelai Wanita</p>
               <p className="text-[#d4c3b5] leading-relaxed max-w-xs text-xs">
-                Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Larangan, Kembaran, Banyumas, Jawa Tengah, 53182
+                Jl. Grumbul Bakung Kulon, No.51 RT.5/RW.1, Desa Linggasari, Kec. Kembaran, Kab. Banyumas, Jawa Tengah, 53182
               </p>
             </div>
           </div>
