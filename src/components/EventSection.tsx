@@ -43,11 +43,14 @@ export const EventSection: React.FC = () => {
         <p className="text-xs font-serif text-[#d4c3b5] tracking-widest uppercase mb-2 text-center">
           Rangkaian Acara
         </p>
-        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gold text-center leading-snug mb-3">
+        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gold text-center leading-snug mb-2">
           Sabtu &amp; Minggu, <br />
           26 – 27 September 2026
         </h2>
-        <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto my-2"></div>
+        <div 
+          className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto"
+          style={{ marginTop: '16px', marginBottom: '28px' }}
+        ></div>
       </div>
 
       {/* Countdown Timer Card */}

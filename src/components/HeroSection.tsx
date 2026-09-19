@@ -17,10 +17,16 @@ export const HeroSection = () => {
         Hero &amp; Sindy
       </h1>
 
-      <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent my-4"></div>
+      <div 
+        className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto"
+        style={{ marginTop: '16px', marginBottom: '28px' }}
+      ></div>
 
       {/* Arabic Quran Quote Card (Coklat/Cream theme) */}
-      <div className="glass-card mt-6 mb-8 text-center text-xs leading-relaxed max-w-md w-full p-6 sm:p-7 shadow-xl">
+      <div 
+        className="glass-card mb-8 text-center text-xs leading-relaxed max-w-md w-full p-6 sm:p-7 shadow-xl"
+        style={{ marginTop: '24px' }}
+      >
         {/* Arabic Verse */}
         <p className="font-serif text-lg text-[#fdfbf7] mb-3 leading-loose tracking-wide">
           وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً

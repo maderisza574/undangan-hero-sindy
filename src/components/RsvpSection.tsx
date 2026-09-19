@@ -216,16 +216,23 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({ defaultGuestName = '' 
       </div>
 
       {/* Live Wishes Feed */}
-      <div className="w-full text-center flex flex-col items-center justify-center space-y-4">
-        <p className="text-sm font-bold text-[#d4a373] tracking-wider uppercase mb-3 flex items-center justify-center gap-2 text-center w-full">
+      <div className="w-full text-center flex flex-col items-center justify-center">
+        <p 
+          className="text-sm sm:text-base font-bold text-[#d4a373] tracking-wider uppercase flex items-center justify-center gap-2 text-center w-full"
+          style={{ marginTop: '20px', marginBottom: '22px' }}
+        >
           <MessageSquare className="w-4 h-4 text-[#d4a373]" />
           <span>Ucapan Doa Restu ({messages.length})</span>
         </p>
 
-        <div className="space-y-4 max-h-[420px] overflow-y-auto pr-1">
+        <div className="w-full space-y-5 sm:space-y-6 max-h-[460px] overflow-y-auto pr-1.5 py-2">
           {messages.map((item) => (
-            <div key={item.id} className="p-4 sm:p-5 rounded-2xl bg-[rgba(28,21,18,0.7)] border border-[rgba(212,163,115,0.25)] shadow-md">
-              <div className="flex items-center justify-between mb-2.5">
+            <div 
+              key={item.id} 
+              className="p-4 sm:p-5 rounded-2xl bg-[rgba(28,21,18,0.75)] border border-[rgba(212,163,115,0.25)] shadow-lg text-left"
+              style={{ marginBottom: '16px' }}
+            >
+              <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-[rgba(212,163,115,0.25)] text-[#f7e7ce] flex items-center justify-center font-bold text-sm border border-[rgba(212,163,115,0.4)]">
                     {item.name.charAt(0).toUpperCase()}

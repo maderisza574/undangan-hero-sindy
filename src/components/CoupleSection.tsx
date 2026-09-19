@@ -7,21 +7,21 @@ export const CoupleSection = () => {
   return (
     <section id="mempelai" className="px-5 py-12 sm:py-16 text-center scroll-mt-6">
       {/* Section Header */}
-      <div 
+      <div
         className="text-center flex flex-col items-center justify-center w-full"
         style={{ paddingTop: '12px', paddingBottom: '20px', marginBottom: '32px' }}
       >
         <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gold tracking-[0.2em] uppercase mb-3">
           Mempelai Pengantin
         </h2>
-        <div 
+        <div
           className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto"
           style={{ marginTop: '8px' }}
         ></div>
       </div>
 
       {/* Bride Card: Mempelai Wanita (Foto Kiri, Nama Kanan) */}
-      <div 
+      <div
         className="glass-card p-5 sm:p-6 text-left shadow-xl"
         style={{ marginTop: '28px', marginBottom: '0px' }}
       >
@@ -62,7 +62,7 @@ export const CoupleSection = () => {
       </div>
 
       {/* Heart Divider */}
-      <div 
+      <div
         className="py-2 flex items-center justify-center gap-4 text-[#d4a373] w-full"
         style={{ marginTop: '54px', marginBottom: '54px' }}
       >
@@ -72,7 +72,7 @@ export const CoupleSection = () => {
       </div>
 
       {/* Groom Card: Mempelai Pria (Foto Kanan, Nama Kiri) */}
-      <div 
+      <div
         className="glass-card mb-10 sm:mb-12 p-5 sm:p-6 text-right shadow-xl"
         style={{ marginTop: '0px' }}
       >
