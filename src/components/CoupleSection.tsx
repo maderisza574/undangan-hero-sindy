@@ -11,7 +11,7 @@ export const CoupleSection = () => {
         className="text-center flex flex-col items-center justify-center w-full"
         style={{ paddingTop: '12px', paddingBottom: '20px', marginBottom: '32px' }}
       >
-        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gold tracking-[0.2em] uppercase mb-3">
+        <h2 className="text-xl sm:text-2xl font-serif font-bold text-gold tracking-[0.18em] uppercase mb-2.5">
           Mempelai Pengantin
         </h2>
         <div
