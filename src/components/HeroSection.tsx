@@ -4,16 +4,19 @@ export const HeroSection = () => {
   return (
     <section className="relative px-5 pt-12 pb-8 text-center flex flex-col items-center justify-center">
       {/* Top Minimalist Logo Icon */}
-      <div className="w-12 h-12 rounded-full border border-[rgba(212,163,115,0.4)] bg-[rgba(40,30,25,0.7)] flex items-center justify-center mb-4 shadow-lg">
+      <div 
+        className="w-12 h-12 rounded-full border border-[rgba(212,163,115,0.4)] bg-[rgba(40,30,25,0.7)] flex items-center justify-center shadow-lg"
+        style={{ marginTop: '14px', marginBottom: '22px' }}
+      >
         <Heart className="w-5 h-5 text-[#d4a373] fill-[#d4a373]" />
       </div>
 
       {/* Main Title */}
-      <p className="text-xs font-sans tracking-[0.3em] text-[#d4c3b5] uppercase font-semibold mb-2">
+      <p className="text-xs font-sans tracking-[0.3em] text-[#d4c3b5] uppercase font-semibold mb-3.5">
         THE WEDDING OF
       </p>
 
-      <h1 className="text-5xl font-cursive text-gold mb-2 leading-tight">
+      <h1 className="text-5xl font-cursive text-gold mb-3 leading-tight" style={{ marginTop: '6px' }}>
         Hero &amp; Sindy
       </h1>
 
