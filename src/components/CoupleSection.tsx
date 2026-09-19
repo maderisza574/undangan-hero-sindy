@@ -7,17 +7,23 @@ export const CoupleSection = () => {
   return (
     <section id="mempelai" className="px-5 py-12 sm:py-16 text-center scroll-mt-6">
       {/* Section Header */}
-      <div className="mb-10 sm:mb-12">
-        <p className="text-xs font-sans text-[#d4c3b5] tracking-widest uppercase mb-1">
-          MEMPELAI PENGANTIN
-        </p>
-        <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto my-2"></div>
+      <div 
+        className="text-center flex flex-col items-center justify-center w-full"
+        style={{ paddingTop: '12px', paddingBottom: '20px', marginBottom: '32px' }}
+      >
+        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gold tracking-[0.2em] uppercase mb-3">
+          Mempelai Pengantin
+        </h2>
+        <div 
+          className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto"
+          style={{ marginTop: '8px' }}
+        ></div>
       </div>
 
       {/* Bride Card: Mempelai Wanita (Foto Kiri, Nama Kanan) */}
       <div 
         className="glass-card p-5 sm:p-6 text-left shadow-xl"
-        style={{ marginBottom: '0px' }}
+        style={{ marginTop: '28px', marginBottom: '0px' }}
       >
         <div className="flex items-center gap-5">
           {/* Foto Mempelai Wanita (Kiri) */}
@@ -99,8 +105,8 @@ export const CoupleSection = () => {
                 Putra Ketiga dari
               </p>
               <p className="font-semibold text-xs sm:text-sm text-[#fdfbf7] leading-relaxed">
-                Bpk. Suprayitno (Alm) &amp; <br />
-                Ibu Heni Ekowati (Alm)
+                Bpk. Suprayitno (alm.) &amp; <br />
+                Ibu Heni Ekowati (almh.)
               </p>
             </div>
           </div>

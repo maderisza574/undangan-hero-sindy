@@ -375,107 +375,107 @@ export const AdminPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#07120d] text-[#f4efe6] font-sans pb-12">
-      <div className="max-w-xl mx-auto px-4 py-6">
+    <div className="min-h-screen bg-[#07120d] text-[#f4efe6] font-sans pb-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         
         {/* Header Bar */}
         <div className="flex items-center justify-between mb-6 pb-4 border-b border-[rgba(223,179,85,0.2)]">
           <a
             href="/"
-            className="inline-flex items-center gap-1.5 text-xs text-[#dfb355] hover:underline"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-[#dfb355] hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Lihat Tampilan Undangan</span>
           </a>
           
           <div className="flex items-center gap-2">
-            <span className={`text-[10px] px-2.5 py-1 rounded-full font-semibold flex items-center gap-1 border ${
+            <span className={`text-[11px] sm:text-xs px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 border ${
               isSupabaseConfigured
                 ? 'bg-green-950 text-green-400 border-green-800'
                 : 'bg-amber-950 text-amber-400 border-amber-800'
             }`}>
-              <Database className="w-3 h-3" />
+              <Database className="w-3.5 h-3.5" />
               {isSupabaseConfigured ? 'Supabase Connected' : 'Local Storage Mode'}
             </span>
           </div>
         </div>
 
         {/* Title */}
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-1.5 text-xs text-[#dfb355] font-semibold uppercase tracking-widest mb-1">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-[#dfb355] font-semibold uppercase tracking-widest mb-1.5">
             <Sparkles className="w-4 h-4" /> Generator Link Undangan WA &amp; RSVP
           </div>
-          <h1 className="text-2xl font-serif font-bold text-gold">
+          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-gold">
             Manajemen Undangan &amp; RSVP
           </h1>
-          <p className="text-xs text-[#b8c4bc] mt-1">
-            Kelola daftar tamu, link WhatsApp, dan moderasi ucapan doa restu tamu.
+          <p className="text-xs sm:text-sm text-[#b8c4bc] mt-1.5 max-w-lg mx-auto">
+            Kelola daftar tamu, link WhatsApp, dan moderasi ucapan doa restu tamu secara mudah dan nyaman.
           </p>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 rounded-xl bg-[rgba(10,19,15,0.8)] border border-[rgba(223,179,85,0.25)] p-1.5 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 rounded-2xl bg-[rgba(10,19,15,0.8)] border border-[rgba(223,179,85,0.25)] p-2 mb-8">
           <button
             id="tab-btn-create"
             onClick={() => handleTabChange('create')}
-            className={`py-2 px-1.5 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 ${
+            className={`py-3 px-2 text-xs sm:text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2 ${
               activeTab === 'create'
-                ? 'bg-[#dfb355] text-[#07120d] shadow-md'
-                : 'text-[#b8c4bc] hover:text-[#f4efe6]'
+                ? 'bg-[#dfb355] text-[#07120d] shadow-md font-bold'
+                : 'text-[#b8c4bc] hover:text-[#f4efe6] hover:bg-[rgba(255,255,255,0.05)]'
             }`}
           >
-            <UserPlus className="w-3.5 h-3.5 shrink-0" />
+            <UserPlus className="w-4 h-4 shrink-0" />
             <span className="truncate">Tambah Tamu</span>
           </button>
           <button
             id="tab-btn-list"
             onClick={() => handleTabChange('list')}
-            className={`py-2 px-1.5 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 ${
+            className={`py-3 px-2 text-xs sm:text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2 ${
               activeTab === 'list'
-                ? 'bg-[#dfb355] text-[#07120d] shadow-md'
-                : 'text-[#b8c4bc] hover:text-[#f4efe6]'
+                ? 'bg-[#dfb355] text-[#07120d] shadow-md font-bold'
+                : 'text-[#b8c4bc] hover:text-[#f4efe6] hover:bg-[rgba(255,255,255,0.05)]'
             }`}
           >
-            <Share2 className="w-3.5 h-3.5 shrink-0" />
+            <Share2 className="w-4 h-4 shrink-0" />
             <span className="truncate">Tamu ({guests.length})</span>
           </button>
           <button
             id="tab-btn-rsvp"
             onClick={() => handleTabChange('rsvp')}
-            className={`py-2 px-1.5 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 ${
+            className={`py-3 px-2 text-xs sm:text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2 ${
               activeTab === 'rsvp'
-                ? 'bg-[#dfb355] text-[#07120d] shadow-md'
-                : 'text-[#b8c4bc] hover:text-[#f4efe6]'
+                ? 'bg-[#dfb355] text-[#07120d] shadow-md font-bold'
+                : 'text-[#b8c4bc] hover:text-[#f4efe6] hover:bg-[rgba(255,255,255,0.05)]'
             }`}
           >
-            <MessageSquare className="w-3.5 h-3.5 shrink-0" />
+            <MessageSquare className="w-4 h-4 shrink-0" />
             <span className="truncate">RSVP ({rsvpMessages.length})</span>
           </button>
           <button
             id="tab-btn-template"
             onClick={() => handleTabChange('template')}
-            className={`py-2 px-1.5 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 ${
+            className={`py-3 px-2 text-xs sm:text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2 ${
               activeTab === 'template'
-                ? 'bg-[#dfb355] text-[#07120d] shadow-md'
-                : 'text-[#b8c4bc] hover:text-[#f4efe6]'
+                ? 'bg-[#dfb355] text-[#07120d] shadow-md font-bold'
+                : 'text-[#b8c4bc] hover:text-[#f4efe6] hover:bg-[rgba(255,255,255,0.05)]'
             }`}
           >
-            <Edit3 className="w-3.5 h-3.5 shrink-0" />
+            <Edit3 className="w-4 h-4 shrink-0" />
             <span className="truncate">Template WA</span>
           </button>
         </div>
 
         {/* TAB 1: TAMBAH TAMU FORM */}
         {activeTab === 'create' && (
-          <div className="glass-card text-left">
-            <h2 className="text-lg font-serif font-bold text-[#f9eaaf] mb-4 flex items-center gap-2">
-              <UserPlus className="w-5 h-5 text-[#dfb355]" />
+          <div className="glass-card text-left p-6 sm:p-8">
+            <h2 className="text-xl font-serif font-bold text-[#f9eaaf] mb-6 flex items-center gap-2.5">
+              <UserPlus className="w-6 h-6 text-[#dfb355]" />
               <span>Input Tamu Baru</span>
             </h2>
 
-            <form onSubmit={handleAddGuest} className="space-y-4">
+            <form onSubmit={handleAddGuest} className="space-y-6">
               <div>
-                <label className="block text-xs font-semibold text-[#f9eaaf] mb-1">
+                <label className="block text-sm font-semibold text-[#f9eaaf] mb-2">
                   Nama Kepada Yth. *
                 </label>
                 <input
@@ -484,15 +484,15 @@ export const AdminPage: React.FC = () => {
                   value={guestName}
                   onChange={(e) => setGuestName(e.target.value)}
                   placeholder="Contoh: Desphi / Bapak Ahmad &amp; Keluarga"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[rgba(10,19,15,0.9)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] focus:outline-none focus:border-[#dfb355]"
+                  className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-[rgba(10,19,15,0.95)] border border-[rgba(223,179,85,0.35)] text-sm sm:text-base text-[#f4efe6] focus:outline-none focus:border-[#dfb355] focus:ring-1 focus:ring-[#dfb355] transition-all shadow-inner"
                 />
-                <p className="text-[10px] text-[#b8c4bc] mt-1">
+                <p className="text-xs text-[#b8c4bc] mt-2">
                   Nama ini akan langsung tampil di sampul depan ucapan undangan.
                 </p>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#f9eaaf] mb-1">
+                <label className="block text-sm font-semibold text-[#f9eaaf] mb-2">
                   Nomor WhatsApp Tamu (Opsional)
                 </label>
                 <input
@@ -500,24 +500,27 @@ export const AdminPage: React.FC = () => {
                   value={guestPhone}
                   onChange={(e) => setGuestPhone(e.target.value)}
                   placeholder="Contoh: 08123456789 atau 628123456789"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[rgba(10,19,15,0.9)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] focus:outline-none focus:border-[#dfb355]"
+                  className="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-[rgba(10,19,15,0.95)] border border-[rgba(223,179,85,0.35)] text-sm sm:text-base text-[#f4efe6] focus:outline-none focus:border-[#dfb355] focus:ring-1 focus:ring-[#dfb355] transition-all shadow-inner"
                 />
               </div>
 
               {/* Realtime Live Preview Box */}
               {guestName && (
-                <div className="p-3.5 rounded-xl bg-[rgba(10,19,15,0.7)] border border-[rgba(223,179,85,0.2)] space-y-2">
-                  <p className="text-[11px] font-semibold text-[#dfb355]">
+                <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[rgba(10,19,15,0.75)] border border-[rgba(223,179,85,0.25)] space-y-2.5">
+                  <p className="text-xs sm:text-sm font-semibold text-[#dfb355]">
                     Hasil Pratinjau Link Undangan:
                   </p>
-                  <p className="text-xs font-mono text-[#f9eaaf] break-all bg-[#0a130f] p-2 rounded border border-[rgba(223,179,85,0.15)]">
+                  <p className="text-xs sm:text-sm font-mono text-[#f9eaaf] break-all bg-[#0a130f] p-3 rounded-xl border border-[rgba(223,179,85,0.15)]">
                     {buildInvitationUrl(guestName)}
                   </p>
                 </div>
               )}
 
-              <button type="submit" className="btn-gold text-xs w-full py-3">
-                <Sparkles className="w-4 h-4" />
+              <button 
+                type="submit" 
+                className="btn-gold text-sm sm:text-base font-bold w-full py-3.5 sm:py-4 rounded-xl sm:rounded-2xl shadow-xl flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-[1.01]"
+              >
+                <Sparkles className="w-5 h-5" />
                 <span>Generate Link &amp; Simpan ke Daftar</span>
               </button>
             </form>
@@ -529,13 +532,13 @@ export const AdminPage: React.FC = () => {
           <div className="space-y-4">
             {/* Search Bar */}
             <div className="relative">
-              <Search className="w-4 h-4 text-[#dfb355] absolute left-3.5 top-3" />
+              <Search className="w-5 h-5 text-[#dfb355] absolute left-4 top-3.5 sm:top-4" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Cari nama tamu / nomor WA..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[rgba(10,19,15,0.9)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] focus:outline-none focus:border-[#dfb355]"
+                className="w-full pl-12 pr-4 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-[rgba(10,19,15,0.95)] border border-[rgba(223,179,85,0.35)] text-sm sm:text-base text-[#f4efe6] focus:outline-none focus:border-[#dfb355] transition-all"
               />
             </div>
 
@@ -684,13 +687,13 @@ export const AdminPage: React.FC = () => {
             {/* Search, Filter & Refresh Bar */}
             <div className="flex flex-col sm:flex-row gap-2">
               <div className="relative flex-1">
-                <Search className="w-4 h-4 text-[#dfb355] absolute left-3.5 top-3" />
+                <Search className="w-5 h-5 text-[#dfb355] absolute left-4 top-3.5 sm:top-4" />
                 <input
                   type="text"
                   value={rsvpSearchQuery}
                   onChange={(e) => setRsvpSearchQuery(e.target.value)}
                   placeholder="Cari pengirim / kata ucapan..."
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[rgba(10,19,15,0.9)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] focus:outline-none focus:border-[#dfb355]"
+                  className="w-full pl-12 pr-4 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-[rgba(10,19,15,0.95)] border border-[rgba(223,179,85,0.35)] text-sm sm:text-base text-[#f4efe6] focus:outline-none focus:border-[#dfb355] transition-all"
                 />
               </div>
 
@@ -803,7 +806,7 @@ export const AdminPage: React.FC = () => {
               rows={12}
               value={waTemplate}
               onChange={(e) => handleSaveTemplate(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl bg-[rgba(10,19,15,0.9)] border border-[rgba(223,179,85,0.3)] text-xs text-[#f4efe6] font-sans leading-relaxed focus:outline-none focus:border-[#dfb355]"
+              className="w-full px-4 sm:px-5 py-4 rounded-xl sm:rounded-2xl bg-[rgba(10,19,15,0.95)] border border-[rgba(223,179,85,0.35)] text-sm text-[#f4efe6] font-sans leading-relaxed focus:outline-none focus:border-[#dfb355] focus:ring-1 focus:ring-[#dfb355] transition-all shadow-inner"
             ></textarea>
 
             <div className="mt-3 flex items-center justify-between">
