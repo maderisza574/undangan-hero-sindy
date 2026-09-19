@@ -19,13 +19,13 @@ export const HeroSection = () => {
 
       <div 
         className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mx-auto"
-        style={{ marginTop: '16px', marginBottom: '28px' }}
+        style={{ marginTop: '12px', marginBottom: '16px' }}
       ></div>
 
       {/* Arabic Quran Quote Card (Coklat/Cream theme) */}
       <div 
         className="glass-card mb-8 text-center text-xs leading-relaxed max-w-md w-full p-6 sm:p-7 shadow-xl"
-        style={{ marginTop: '24px' }}
+        style={{ marginTop: '4px' }}
       >
         {/* Arabic Verse */}
         <p className="font-serif text-lg text-[#fdfbf7] mb-3 leading-loose tracking-wide">

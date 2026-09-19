@@ -9,7 +9,7 @@ export const CoupleSection = () => {
       {/* Section Header */}
       <div
         className="text-center flex flex-col items-center justify-center w-full"
-        style={{ paddingTop: '12px', paddingBottom: '20px', marginBottom: '32px' }}
+        style={{ paddingTop: '12px', paddingBottom: '8px', marginBottom: '12px' }}
       >
         <h2 className="text-xl sm:text-2xl font-serif font-bold text-gold tracking-[0.18em] uppercase mb-2.5">
           Mempelai Pengantin
@@ -23,7 +23,7 @@ export const CoupleSection = () => {
       {/* Bride Card: Mempelai Wanita (Foto Kiri, Nama Kanan) */}
       <div
         className="glass-card p-5 sm:p-6 text-left shadow-xl"
-        style={{ marginTop: '28px', marginBottom: '0px' }}
+        style={{ marginTop: '12px', marginBottom: '0px' }}
       >
         <div className="flex items-center gap-5">
           {/* Foto Mempelai Wanita (Kiri) */}
